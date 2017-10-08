@@ -28,8 +28,11 @@ def screen_recording():
     vid.release()
     cv2.destroyAllWindows()
 
-# screen_size()
-screen_recording()
+if __name__ == '__main__':
+    # screen_size()
+    screen_recording()
+
+
 # import cv2
 #
 # cap = cv2.VideoCapture(0)

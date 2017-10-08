@@ -87,8 +87,9 @@ def listen_for_speech(threshold=THRESHOLD, num_phrases=-1):
     audio2send = []
     cur_data = ''  # current chunk of audio data
     rel = RATE/CHUNK
-    max_len = int(round(SILENCE_LIMIT * rel))
-    max_len_p = int(round(PREV_AUDIO * rel))
+    max_len = int(math.ceil(SILENCE_LIMIT * rel))
+    max_len_p = int(math.ceil(PREV_AUDIO * rel))
+
     slid_win = deque(maxlen=max_len)
     #Prepend audio from 0.5 seconds before noise was detected
     prev_audio = deque(maxlen=max_len_p)
@@ -123,8 +124,8 @@ def listen_for_speech(threshold=THRESHOLD, num_phrases=-1):
 
             # Reset all
             started = False
-            max_limit = int(round(SILENCE_LIMIT * rel))
-            max_previous = int(round(0.5 * rel))
+            max_limit = int(math.ceil(SILENCE_LIMIT * rel)) #int(round(SILENCE_LIMIT * rel))
+            max_previous = int(math.ceil(0.8 * rel)) #int(round(0.5 * rel))
 
             slid_win = deque(maxlen=max_limit)
             prev_audio = deque(maxlen=max_previous)

@@ -2,6 +2,7 @@ import threading
 from array import array
 from queue import Queue, Full
 import pyaudio
+import time
 
 CHUNK_SIZE = 1024
 MIN_VOLUME = 500
@@ -35,9 +36,9 @@ def record(stopped, q):
         vol = max(chunk)
         if vol >= MIN_VOLUME:
             # TODO: write to file
-            print("Sound",)
+            print("sound-v:", vol)
         else:
-            print("Silent",)
+            print("slient-v", vol)
 
 
 def listen(stopped, q):
