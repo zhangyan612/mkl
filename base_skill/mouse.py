@@ -16,8 +16,9 @@ def move_click(x,y):
     # left_click(x,y)
     right_click(x,y)
 
-
+# selection of paragraph of texts
 def selection(x,y):
+    pass
 
 
 #995 234 1790 845
