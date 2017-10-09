@@ -14,7 +14,7 @@ except ImportError:
 
 class api_conversation():
     def __init__(self):
-        self.token = '1141e78a4b2f4b739c10352367e7e9d9' # app management agent
+        self.token = 'e677f19897554756861dd69150c87d58' # faq client
         self.ai = apiai.ApiAI(self.token)
         self.session_id =''
 
@@ -42,15 +42,16 @@ class api_conversation():
             self.session_id = res_text['sessionId']
 
         result = res_text['result']
-
+        parameters = result['parameters']
         if 'action' in result.keys():
             action = result['action']
         else:
             action = ''
 
         answer = result['fulfillment']['speech']
-        return answer, action
+        return answer, action, parameters
 
 if __name__ == '__main__':
-    answer, action = api_conversation().get_answer('Who are you')
+    answer, action, parameters = api_conversation().get_answer('Who are you')
     print(answer, action)
+

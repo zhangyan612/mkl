@@ -15,6 +15,7 @@ def main():
 
     listen_t = threading.Thread(target=listen, args=(stopped, q))
     listen_t.start()
+
     record_t = threading.Thread(target=record, args=(stopped, q))
     record_t.start()
 
@@ -33,7 +34,10 @@ def record(stopped, q):
         if stopped.wait(timeout=0):
             break
         chunk = q.get()
+        # change to volume decay
+
         vol = max(chunk)
+
         if vol >= MIN_VOLUME:
             # TODO: write to file
 

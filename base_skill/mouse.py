@@ -11,21 +11,27 @@ def right_click(x, y):
     win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTDOWN, x, y, 0, 0)
     win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP, x, y, 0, 0)
 
-def move_click(x,y):
-    move_mouse(x,y)
-    # left_click(x,y)
-    right_click(x,y)
+def move_click(x, y, side):
+    move_mouse(x, y)
+    if side =='left':
+        left_click(x, y)
+    elif side =='right':
+        right_click(x,y)
 
 # selection of paragraph of texts
 def selection(x,y):
     pass
 
 
+if __name__ =='__main__':
+    left = 600
+    bottom = 300
+
+    move_click(left, bottom, 'right')
+
+
+
 #995 234 1790 845
 #(left, top, right, bottom) = GetWindowRect(hwnd)
 
-left = 600
-bottom = 300
-
-move_click(left,bottom)
 # click(left+40,bottom -222)
