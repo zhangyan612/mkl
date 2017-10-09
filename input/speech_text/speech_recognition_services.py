@@ -42,9 +42,16 @@ def recognize_google():
 
 
 def recognize_wit():
-    r = sr.Recognizer()
+    print('service start')
     t0 = clock()
-    audio = record_audio(r)
+    r = sr.Recognizer()
+    m = sr.Microphone()
+
+    with m as source:
+        #r.adjust_for_ambient_noise(source)  # we only need to calibrate once, before we start listening
+        audio = r.listen(source)
+
+    # write_file(audio, 'output.wav')
     t1 = clock()
     try:
         print('sending audio to wit')
@@ -52,6 +59,7 @@ def recognize_wit():
         print("You said: " + response)
         t2 = clock()
         print('recording: %s seconds, api request: %s seconds' % (t1 - t0, t2 - t1))
+
         return response
     except sr.UnknownValueError:
         print("Wit Recognition could not understand audio")
@@ -61,9 +69,11 @@ def recognize_wit():
         return "I cannot connect to web service"
 
 def recognize_bing():
-    r = sr.Recognizer()
     t0 = clock()
-    audio = record_audio(r)
+    r = sr.Recognizer()
+    m = sr.Microphone()
+    with m as source:
+        audio = r.listen(source)
     t1 = clock()
     try:
         print('sending audio to bing')
@@ -80,7 +90,7 @@ def recognize_bing():
         return "I cannot connect to web service"
 
 if __name__ == "__main__":
-    recognize_google()
+    recognize_bing()
     # recognize_bing()
     # recognize_wit()
     # speech_text = recognize_wit()

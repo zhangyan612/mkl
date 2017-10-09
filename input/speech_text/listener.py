@@ -36,6 +36,7 @@ def record(stopped, q):
         vol = max(chunk)
         if vol >= MIN_VOLUME:
             # TODO: write to file
+
             print("sound-v:", vol)
         else:
             print("slient-v", vol)

@@ -30,11 +30,11 @@ RATE = 16000
 THRESHOLD = 2500  # The threshold intensity that defines silence
                   # and noise signal (an int. lower than THRESHOLD is silence).
 
-SILENCE_LIMIT = 2  # Silence limit in seconds. The max ammount of seconds where
+SILENCE_LIMIT = 1.2  # Silence limit in seconds. The max ammount of seconds where
                    # only silence is recorded. When this time passes the
                    # recording finishes and the file is delivered.
 
-PREV_AUDIO = 0.8  # Previous audio (in seconds) to prepend. When noise
+PREV_AUDIO = 0.7  # Previous audio (in seconds) to prepend. When noise
                   # is detected, how much of previously recorded audio is
                   # prepended. This helps to prevent chopping the beggining
                   # of the phrase.
@@ -87,10 +87,12 @@ def listen_for_speech(threshold=THRESHOLD, num_phrases=-1):
     audio2send = []
     cur_data = ''  # current chunk of audio data
     rel = RATE/CHUNK
+
     max_len = int(math.ceil(SILENCE_LIMIT * rel))
     max_len_p = int(math.ceil(PREV_AUDIO * rel))
 
     slid_win = deque(maxlen=max_len)
+
     #Prepend audio from 0.5 seconds before noise was detected
     prev_audio = deque(maxlen=max_len_p)
     started = False
@@ -102,7 +104,7 @@ def listen_for_speech(threshold=THRESHOLD, num_phrases=-1):
         slid_win.append(math.sqrt(abs(audioop.avg(cur_data, 4))))
         #print slid_win[-1]
         if(sum([x > THRESHOLD for x in slid_win]) > 0):
-            if(not started):
+            if not started:
                 print("Starting record of phrase")
                 started = True
             audio2send.append(cur_data)
@@ -124,8 +126,9 @@ def listen_for_speech(threshold=THRESHOLD, num_phrases=-1):
 
             # Reset all
             started = False
+
             max_limit = int(math.ceil(SILENCE_LIMIT * rel)) #int(round(SILENCE_LIMIT * rel))
-            max_previous = int(math.ceil(0.8 * rel)) #int(round(0.5 * rel))
+            max_previous = int(math.ceil(PREV_AUDIO * rel)) #int(round(0.5 * rel))
 
             slid_win = deque(maxlen=max_limit)
             prev_audio = deque(maxlen=max_previous)
