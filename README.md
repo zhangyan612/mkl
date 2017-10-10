@@ -39,5 +39,7 @@ data comes from conversation with human and vision of the world
 
 This will become a more generalized machine intelligence
 
-### now 
+### now
 research on graph database and find one
+
+learn cntk examples, very good tutorials
