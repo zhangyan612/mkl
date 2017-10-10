@@ -176,5 +176,9 @@ def do_train():
     z = create_model()
     reader = create_reader(data['train']['file'], is_training=True)
     train(reader, z)
+    z.update_signature(cntk.layers.Tensor[input_shape_mn])
+    z.save('model.cmf')
+
 
 do_train()
+
