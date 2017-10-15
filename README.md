@@ -2,12 +2,12 @@
 Machine knowledge intelligence project
 
 # objective
-build a human knowledge graph and enable human computer communication and understanding
+build a human knowledge graph and enable human computer communication. enable roboust linguistic understanding
 
 ##　steps
 1. voice to text
-2. text to command or intent
-3. execute command and evaluate
+2. text to command or intent, nlp
+3. intent extraction to form computer actions
 
 ## training
 1. do simple thing like open a program (1 step or multiple steps)
@@ -33,13 +33,12 @@ this generally defines a schema based on human knowledge with some or little dat
 ## manual modification - human supervision
 save this database model and do cleaning and modifying if anything goes wrong
 
-
 once this model is robust and ready, we can gather data based on it in production environment
 data comes from conversation with human and vision of the world
 
 This will become a more generalized machine intelligence
 
 ### now
-research on graph database and find one
-
+research on popular implementation and breakthrough of computer linguistic
+use orientdb as graph database engine 
 learn cntk examples, very good tutorials

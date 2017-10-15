@@ -1,0 +1,20 @@
+# system settings 
+sudo visudo
+
+# add NOPASSWD to sudo group
+$yourname ALL=(ALL) NOPASSWD: ALL
+
+# use sudo permission to open a file
+sudo -i gedit /etc/odbcinst.ini
+sudo -i gedit /etc/postgresql/9.3/main/pg_hba.conf
+sudo -i gedit ~/.odbc.ini
+
+# find a installed package in directory
+find -iname cogutil
+dpkg -l 
+which -a psql
+/usr/bin/psql --version
+
+# Show all files 
+ctrl + H 
+

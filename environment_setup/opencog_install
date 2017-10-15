@@ -1,28 +1,8 @@
 # some useful commands for opencog project
 
-# use sudo permission to open a file
-sudo -i gedit /etc/odbcinst.ini
-sudo -i gedit /etc/postgresql/9.3/main/pg_hba.conf
-sudo -i gedit ~/.odbc.ini
-
-# find a installed package in directory
-find -iname cogutil
-dpkg -l 
-which -a psql
-/usr/bin/psql --version
-
-# Show all files 
-ctrl + H 
-
-
-
-
 export PYTHONPATH="${PYTHONPATH}:/usr/local/share/opencog/python"
 export PYTHONPATH="${PYTHONPATH}:/home/yan/repos/opencog-all/opencog/build/opencog/python"
 export PYTHONPATH="${PYTHONPATH}:/home/yan/repos/opencog-all/opencog/build/opencog/cython"
-
-
-
 
 
 # steps to build working environment 
@@ -40,4 +20,3 @@ cat opencog/persist/sql/multi-driver/atom.sql | psql mycogdata -U opencog_user
 
 cd ~/repos/opencog-all/opencog/build/opencog/cogserver/server
 cogserver -c  my.conf
-
