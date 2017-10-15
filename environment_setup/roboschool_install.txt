@@ -1,4 +1,7 @@
 # install instruction for roboschool on linux terminal
+cd ~/repos
+
+git clone https://github.com/openai/roboschool.git
 
 ROBOSCHOOL_PATH=~/repos/roboschool
 
@@ -9,8 +12,14 @@ sudo add-apt-repository ppa:mc3man/trusty-media
 sudo apt-get update
 sudo apt-get install ffmpeg gstreamer0.10-ffmpeg
 
-# not installed
+# try to install
+# Upgrade to python 3.5
+# https://tecadmin.net/install-python-3-5-on-ubuntu/
+pip3 install --upgrade pip
+pip3 install
 libpython3.5-dev 
+pip3 install packagename=version --allow-unverified libpython3.5-dev
+pip3 install libpython3.4-dev
 
 git clone https://github.com/olegklimov/bullet3 -b roboschool_self_collision
 mkdir bullet3/build
@@ -19,3 +28,6 @@ cmake -DBUILD_SHARED_LIBS=ON -DUSE_DOUBLE_PRECISION=1 -DCMAKE_INSTALL_PREFIX:PAT
 make -j4
 make install
 cd ../..
+
+sudo -H pip3 install -e $ROBOSCHOOL_PATH
+pip3 install -e $ROBOSCHOOL_PATH
