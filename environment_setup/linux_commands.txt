@@ -44,7 +44,7 @@ git config --global user.name "Yan Zhang"
 whoami
 
 # grant admin to user
-sudo usermod -a -G admin hduser
+sudo usermod -a -G sudo yanzhang
 
 # rename the user name and change folder 
 sudo usermod -l yan chengxin

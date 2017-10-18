@@ -5,6 +5,10 @@ git clone https://github.com/openai/roboschool.git
 
 ROBOSCHOOL_PATH=~/repos/roboschool
 
+# if on python 3.5 environmnet
+sudo apt install cmake ffmpeg pkg-config qtbase5-dev libqt5opengl5-dev libassimp-dev libpython3.5-dev libboost-python-dev libtinyxml-dev
+
+# otherwise some module won't work
 sudo apt-get install pkg-config qtbase5-dev libqt5opengl5-dev libassimp-dev libboost-python-dev libtinyxml-dev
 
 # fmpeg
@@ -31,3 +35,7 @@ cd ../..
 
 sudo -H pip3 install -e $ROBOSCHOOL_PATH
 pip3 install -e $ROBOSCHOOL_PATH
+
+
+python3 agent_zoo/RoboschoolHumanoidFlagrun_v0_2017may.py
+python3 agent_zoo/demo_race2.py
