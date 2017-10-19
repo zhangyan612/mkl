@@ -28,9 +28,19 @@ cogserver -c  my.conf
 # link grammar
 sudo ./configure
 
-# errors 
-make[1]: Entering directory '/tmp/link-grammar-5.4.1/build/man'
-make[1]: *** No rule to make target 'link-parser.man1', needed by 'link-parser.1'.  Stop.
-make[1]: Leaving directory '/tmp/link-grammar-5.4.1/build/man'
-Makefile:535: recipe for target 'all-recursive' failed
-make: *** [all-recursive] Error 1
+download latest zipped file 
+
+./configure
+make
+make check
+# if check has error about locales, do following, still won't work
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+sudo dpkg-reconfigure locales
+
+make install
+ldconfig
+
+# check whether installed
+make installcheck
+
