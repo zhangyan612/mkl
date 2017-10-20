@@ -42,7 +42,7 @@ git config --global user.name "Yan Zhang"
 
 # git cache current user 
 # Set git to use the credential memory cache - default 15min
-git config --global credential.helper cache
+# git config --global credential.helper cache
 
 # Set the cache to timeout after 1 hour (setting is in seconds)
 git config --global credential.helper 'cache --timeout=3600'
