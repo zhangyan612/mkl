@@ -18,3 +18,43 @@ which -a psql
 # Show all files 
 ctrl + H 
 
+# update gcc to latest version 
+sudo apt-get update && \
+sudo apt-get install build-essential software-properties-common -y && \
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y && \
+sudo apt-get update && \
+sudo apt-get install gcc-snapshot -y && \
+sudo apt-get update && \
+sudo apt-get install gcc-6 g++-6 -y && \
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6 && \
+sudo apt-get install gcc-4.8 g++-4.8 -y && \
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8;
+
+# To verify if it worked. Just type in your terminal
+gcc -v
+
+# If everything went fine you should see gcc 6.1.1 by the time I am writing this gist
+
+
+# git install and setup 
+git config --global user.email "zhangyan612@gmail.com"
+git config --global user.name "Yan Zhang"
+
+# git cache current user 
+# Set git to use the credential memory cache - default 15min
+git config --global credential.helper cache
+
+# Set the cache to timeout after 1 hour (setting is in seconds)
+git config --global credential.helper 'cache --timeout=3600'
+
+# get current user name 
+whoami
+
+# grant admin to user
+sudo usermod -a -G sudo yanzhang
+
+# rename the user name and change folder 
+sudo usermod -l yan chengxin
+
+To change home-folder, use
+usermod -d /home/yan -m yan
