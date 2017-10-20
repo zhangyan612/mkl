@@ -15,11 +15,13 @@ sudo apt-get install ffmpeg gstreamer0.10-ffmpeg
 # try to install
 # Upgrade to python 3.5
 # https://tecadmin.net/install-python-3-5-on-ubuntu/
+
 pip3 install --upgrade pip
 pip3 install
+
 libpython3.5-dev 
 pip3 install packagename=version --allow-unverified libpython3.5-dev
-pip3 install libpython3.4-dev
+pip3.5 install libpython3.5-dev
 
 git clone https://github.com/olegklimov/bullet3 -b roboschool_self_collision
 mkdir bullet3/build
@@ -30,4 +32,4 @@ make install
 cd ../..
 
 sudo -H pip3 install -e $ROBOSCHOOL_PATH
-pip3 install -e $ROBOSCHOOL_PATH
+pip3.5 install -e $ROBOSCHOOL_PATH
