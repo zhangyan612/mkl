@@ -1,15 +1,8 @@
-# some useful commands for opencog project
-
-export PYTHONPATH="${PYTHONPATH}:/usr/local/share/opencog/python"
-export PYTHONPATH="${PYTHONPATH}:/home/yan/repos/opencog-all/opencog/build/opencog/python"
-export PYTHONPATH="${PYTHONPATH}:/home/yan/repos/opencog-all/opencog/build/opencog/cython"
-
+# some useful commands and setups for opencog project
 # on ubuntu 16
 # export CONFIG_SHELL=/mmc/bin/bash
 
-
 # setup for atomspace sql persistance
-
 # steps to build working environment 
 # 1. upgrade gcc first to ensure build
 # 2. download octool and install dependencies for opencog
@@ -60,7 +53,6 @@ psql mycogdata
 INSERT INTO TypeCodes (type, typename) VALUES (97, 'SemanticRelationNode');
 
 
-
 # setup opencog on cogserver
 # edit settings
 sudo -i gedit ~/repos/opencog-all/opencog/build/lib/opencog.conf
@@ -87,12 +79,53 @@ exit
 
 # guile access sql
 # make sure to have root permission 
-
 guile
 (use-modules (opencog))
 (use-modules (opencog persist) (opencog persist-sql))
 # does not work
 (sql-open "postgres:///mycogdata?user=opencog_user&password=cheese")
+
+
+
+# test opencog rest api 
+# check whether bashrc file exist 
+cd ~
+ls -a ~
+# add following line on the bottom of bashrc file
+export PYTHONPATH="${PYTHONPATH}:/usr/local/share/opencog/python"
+export PYTHONPATH="${PYTHONPATH}:~/repos/opencog-all/opencog/build/opencog/python"
+export PYTHONPATH="${PYTHONPATH}:~/repos/opencog-all/opencog/build/opencog/cython"
+# then source it to update
+source .bashrc
+
+cd ~/repos/opencog-all/opencog/examples/restapi
+python start_restapi.py
+
+# test client connection (start new terminal)
+python exampleclient.py
+
+
+# importing external knowledge to atomspace 
+cd ~/repos/opencog-all
+git clone https://github.com/opencog/test-datasets.git
+
+# test out ConceptNet Converter 
+cd ~/repos/opencog-all/opencog/opencog/python/conceptnet
+python converter.py
+
+# enter csv, corps location
+/home/yan/repos/opencog-all/test-datasets/conceptnet/conceptnet4.csv
+/home/yan/repos/opencog-all/test-datasets/conceptnet/60000_Word_Freqs.csv
+# output py and name it result.py
+
+# add a new python file named load.py and load it to atomspace
+# from opencog.atomspace import AtomSpace, types
+# import result
+# a = AtomSpace()
+# result.load_concept_net(a, types)
+
+python load.py
+
 
 # link grammar
 sudo ./configure

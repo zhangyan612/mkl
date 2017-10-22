@@ -11,6 +11,7 @@ sudo -i gedit ~/.odbc.ini
 
 # find a installed package in directory
 find -iname cogutil
+# list all computer packages
 dpkg -l 
 which -a psql
 /usr/bin/psql --version
@@ -64,6 +65,8 @@ sudo usermod -l yan chengxin
 To change home-folder, use
 usermod -d /home/yan -m yan
 
+# change folder permission to allow everyone edit 
+sudo chmod -R ugo+rw ~/repos
 
 
 # update boost to 1.60
