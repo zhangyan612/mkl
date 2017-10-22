@@ -34,6 +34,10 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave 
 
 gcc -v
 
+# add git ppa and update git to latest version
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git
 
 # git install and setup 
 git config --global user.email "zhangyan612@gmail.com"
@@ -44,3 +48,4 @@ git config --global push.default simple
 
 # Set the cache to timeout after 1 hour (setting is in seconds)
 git config --global credential.helper 'cache --timeout=3600'
+
