@@ -18,6 +18,10 @@ which -a psql
 # Show all files 
 ctrl + H 
 
+# list installed 
+sudo apt list --installed | less
+
+
 # update gcc to latest version 
 sudo apt-get update && \
 sudo apt-get install build-essential software-properties-common -y && \
@@ -51,10 +55,29 @@ git config --global credential.helper 'cache --timeout=3600'
 whoami
 
 # grant admin to user
-sudo usermod -a -G sudo yanzhang
+sudo usermod -a -G sudo yan
+sudo usermod -a -G root yan
 
 # rename the user name and change folder 
 sudo usermod -l yan chengxin
 
 To change home-folder, use
 usermod -d /home/yan -m yan
+
+
+
+# update boost to 1.60
+cd /usr/local
+wget https://sourceforge.net/projects/boost/files/boost/1.60.0/boost_1_60_0.tar.gz/download
+tar -xzvf download
+rm download
+cd boost_1_60_0
+
+# clang toolset has error
+#./bootstrap.sh --with-toolset=clang --with-icu --with-python=python --libdir=/usr/local/lib --includedir=/usr/local/include
+#./b2 toolset=clang install
+
+./bootstrap.sh --with-icu --with-python=python --libdir=/usr/local/lib --includedir=/usr/local/include
+./b2 install
+
+sudo -i gedit boostrap

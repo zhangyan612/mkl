@@ -36,12 +36,7 @@ make install
 cd ../..
 
 sudo -H pip3 install -e $ROBOSCHOOL_PATH
-<<<<<<< HEAD
-pip3.5 install -e $ROBOSCHOOL_PATH
-=======
 pip3 install -e $ROBOSCHOOL_PATH
-
 
 python3 agent_zoo/RoboschoolHumanoidFlagrun_v0_2017may.py
 python3 agent_zoo/demo_race2.py
->>>>>>> b96c4be4e69755b97ece026d2941fe8c2a5f62f8
