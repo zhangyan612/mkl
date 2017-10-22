@@ -81,3 +81,50 @@ cd boost_1_60_0
 ./b2 install
 
 sudo -i gedit boostrap
+
+
+# add or remove a ppa
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git
+
+# remove 
+ls /etc/apt/sources.list.d
+sudo rm -i /etc/apt/sources.list.d/boost-latest-ppa-trusty.list
+# confirm by typing y
+
+
+# installed boost 
+libboost-atomic1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-atomic1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-chrono1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-chrono1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-date-time-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
+libboost-date-time1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-date-time1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
+libboost-filesystem-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
+libboost-filesystem1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-filesystem1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-math-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
+libboost-math1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-math1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-program-options-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
+libboost-program-options1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-program-options1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-random-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
+libboost-random1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-random1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-regex-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
+libboost-regex1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-regex1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-serialization-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
+libboost-serialization1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-serialization1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-system-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
+libboost-system1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-system1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-thread-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
+libboost-thread1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost-thread1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+libboost1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
