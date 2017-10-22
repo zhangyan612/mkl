@@ -9,9 +9,9 @@ export CONFIG_SHELL=/mmc/bin/bash
 
 
 # steps to build working environment 
-1. upgrade gcc first to ensure build
-2. download octool and install dependencies for opencog
-3. configure postage sql database 
+# 1. upgrade gcc first to ensure build
+# 2. download octool and install dependencies for opencog
+# 3. configure postage sql database 
 /home/yan/repos/opencog-all/atomspace/opencog/persist/sql/README.md
 sudo apt-get install postgresql-9.3
 ALTER USER yan WITH PASSWORD 'zy90612';
@@ -28,7 +28,7 @@ cogserver -c  my.conf
 # link grammar
 sudo ./configure
 
-download latest zipped file 
+# download latest zipped file 
 
 ./configure
 make
