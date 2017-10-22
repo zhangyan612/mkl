@@ -49,3 +49,12 @@ git config --global push.default simple
 # Set the cache to timeout after 1 hour (setting is in seconds)
 git config --global credential.helper 'cache --timeout=3600'
 
+# try install head
+cd ..
+curl https://raw.githubusercontent.com/hansonrobotics/hrtool/master/get_hr.bash|bash
+
+hr init Robotics
+
+hr install head
+
+# still got error
