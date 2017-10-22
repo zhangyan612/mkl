@@ -94,7 +94,7 @@ sudo rm -i /etc/apt/sources.list.d/boost-latest-ppa-trusty.list
 # confirm by typing y
 
 
-# installed boost 
+# installed boost package
 libboost-atomic1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
 libboost-atomic1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
 libboost-chrono1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]

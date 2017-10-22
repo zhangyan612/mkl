@@ -5,25 +5,94 @@ export PYTHONPATH="${PYTHONPATH}:/home/yan/repos/opencog-all/opencog/build/openc
 export PYTHONPATH="${PYTHONPATH}:/home/yan/repos/opencog-all/opencog/build/opencog/cython"
 
 # on ubuntu 16
-export CONFIG_SHELL=/mmc/bin/bash
+# export CONFIG_SHELL=/mmc/bin/bash
 
+
+# setup for atomspace sql persistance
 
 # steps to build working environment 
 # 1. upgrade gcc first to ensure build
 # 2. download octool and install dependencies for opencog
 # 3. configure postage sql database 
-/home/yan/repos/opencog-all/atomspace/opencog/persist/sql/README.md
+
+# Instructions: /home/yan/repos/opencog-all/atomspace/opencog/persist/sql/README.md
 sudo apt-get install postgresql-9.3
+
+# edit postgresql config
+# sudo vi /etc/odbcinst.ini
+sudo -i gedit /etc/odbcinst.ini
+
+sudo su - postgres
+psql template1
+CREATE ROLE root WITH SUPERUSER;
+ALTER ROLE root WITH LOGIN;
+CREATE ROLE yan WITH SUPERUSER;
+ALTER ROLE yan WITH LOGIN;
+
+ALTER USER root WITH PASSWORD 'zy90612';
 ALTER USER yan WITH PASSWORD 'zy90612';
 
-cat opencog/persist/sql/multi-driver/atom.sql | psql mycogdata -U opencog_user
+# verify role created and exit
+\dg
+ctrl+z
+exit 
+exit
+createdb mycogdata
+psql mycogdata
+psql -c "CREATE USER opencog_user WITH PASSWORD 'cheese'" -d mycogdata
 
+# fix peer authentication by change config file
+sudo -i gedit /etc/postgresql/9.3/main/pg_hba.conf
+# find local   all    all   peer and change to local   all     all    md5
+service postgresql reload
+
+# table initilization 
+cd ~/repos/opencog-all/atomspace
+
+
+cat opencog/persist/sql/multi-driver/atom.sql | psql mycogdata
+# enter your user password
+
+# verify table created 
+psql mycogdata
+\d
+# try insertion
+INSERT INTO TypeCodes (type, typename) VALUES (97, 'SemanticRelationNode');
+
+
+
+# setup opencog on cogserver
+# edit settings
+sudo -i gedit ~/repos/opencog-all/opencog/build/lib/opencog.conf
+
+# add following storage settings
+# sql storage
+STORAGE               = "mycogdata"
+STORAGE_USERNAME      = "opencog_user"
+STORAGE_PASSWD        = "cheese"
+
+# copy lib/opencog.conf to your build directory (needed for production)
+cp ~/repos/opencog-all/opencog/build/lib/opencog.conf ~/repos/opencog-all/opencog/build/opencog/cogserver/server/my.conf
 
 # start cogserver
-
 cd ~/repos/opencog-all/opencog/build/opencog/cogserver/server
 cogserver -c  my.conf
+# server will be running 
 
+# start new terminal 
+telnet localhost 17001
+# does not work
+sql-store
+exit 
+
+# guile access sql
+# make sure to have root permission 
+
+guile
+(use-modules (opencog))
+(use-modules (opencog persist) (opencog persist-sql))
+# does not work
+(sql-open "postgres:///mycogdata?user=opencog_user&password=cheese")
 
 # link grammar
 sudo ./configure
