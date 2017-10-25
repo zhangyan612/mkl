@@ -127,6 +127,34 @@ python converter.py
 python load.py
 
 
+
+# install relex 
+# opencog initial installation will get it installed, so don't worry about following
+# install dependencies
+cd repos/opencog-all/relex
+cd install-scripts
+./install-ubuntu-dependencies.sh
+
+
+# opennlp is an optional dependency and can be installed by running the following steps after downloading it from http://sourceforge.net/projects/opennlp/
+tar -xvf opennlp-tools-1.5.0.tgz
+cd opennlp-tools-1.5.0
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+./build.sh
+sudo cp output/opennlp-tools-1.5.0.jar /usr/local/share/java/
+sudo cp lib/maxent-2.5.2.jar /usr/local/share/java/
+sudo cp lib/trove.jar /usr/local/share/java/
+
+# To build relex run
+ant
+
+# Run relex
+# The full set of options available for running can be found at README.md#using-relex. But, for testing run
+./relation-extractor.sh
+
+
+
+
 # link grammar
 sudo ./configure
 
