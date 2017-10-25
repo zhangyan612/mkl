@@ -131,3 +131,11 @@ libboost-thread-dev/trusty,now 1.54.0.1ubuntu1 amd64 [installed]
 libboost-thread1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
 libboost-thread1.54.0/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
 libboost1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
+
+
+ldconfig -p|grep libboost_regex
+ldconfig -p|grep boost_regex-mt -l
+
+g++ -v test.cpp -Lboost-lib-path -lboost_regex-gcc-mt
+
+cat /usr/include/boost/version.hpp | grep "define BOOST_LIB_VERSION"
