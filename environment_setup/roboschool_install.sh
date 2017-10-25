@@ -1,4 +1,6 @@
 # install instruction for roboschool on linux terminal
+# have to install python 3.5
+# if have 3.4, you need to uninstall it 
 cd ~/repos
 
 git clone https://github.com/openai/roboschool.git
