@@ -9,11 +9,12 @@ ROBOSCHOOL_PATH=~/repos/roboschool
 
 # if on python 3.5 environmnet
 sudo apt install cmake ffmpeg pkg-config qtbase5-dev libqt5opengl5-dev libassimp-dev libpython3.5-dev libboost-python-dev libtinyxml-dev
+sudo apt install cmake pkg-config qtbase5-dev libqt5opengl5-dev libassimp-dev libpython3.5-dev libboost-python-dev libtinyxml-dev
 
 # otherwise some module won't work
 sudo apt-get install pkg-config qtbase5-dev libqt5opengl5-dev libassimp-dev libboost-python-dev libtinyxml-dev
 
-# fmpeg
+# install fmpeg if there is error
 sudo add-apt-repository ppa:mc3man/trusty-media
 sudo apt-get update
 sudo apt-get install ffmpeg gstreamer0.10-ffmpeg
@@ -29,6 +30,8 @@ libpython3.5-dev
 pip3 install packagename=version --allow-unverified libpython3.5-dev
 pip3.5 install libpython3.5-dev
 
+
+# install bullet3 
 git clone https://github.com/olegklimov/bullet3 -b roboschool_self_collision
 mkdir bullet3/build
 cd    bullet3/build
@@ -37,8 +40,55 @@ make -j4
 make install
 cd ../..
 
-sudo -H pip3 install -e $ROBOSCHOOL_PATH
+# sudo -H pip3 install -e $ROBOSCHOOL_PATH
 pip3 install -e $ROBOSCHOOL_PATH
 
 python3 agent_zoo/RoboschoolHumanoidFlagrun_v0_2017may.py
 python3 agent_zoo/demo_race2.py
+
+
+
+
+apt install qtdeclarative5-dev
+
+sudo apt-get install qtscript5-dev
+
+
+qtchooser -print-env
+# qtchooser will look at the default.conf, you can create a symlink 
+ln -s /usr/lib/x86_64-linux-gnu/qtchooser/qt5.conf /usr/lib/x86_64-linux-gnu/qtchooser/default.conf
+
+
+
+
+
+# correct way to install ffmpeg
+cd ~/ffmpeg_sources
+wget http://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
+tar xjvf ffmpeg-snapshot.tar.bz2
+cd ffmpeg
+PATH="$PATH:$HOME/bin" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
+  --prefix="$HOME/ffmpeg_build" \
+  --extra-cflags="-I$HOME/ffmpeg_build/include" \
+  --extra-ldflags="-L$HOME/ffmpeg_build/lib" \
+  --bindir="$HOME/bin" \
+  --extra-libs="-ldl" \
+  --enable-gpl \
+  --enable-libfreetype \
+  --disable-x86asm
+
+#   --enable-libtheora \
+#   --enable-libvorbis \
+#   --enable-libvpx \
+#   --enable-libx264 \
+#   --enable-nonfree \
+#   --enable-libopus \
+#   --enable-libmp3lame \
+#   --enable-libfdk-aac \
+#   --enable-libass \
+#   --enable-x11grab
+
+PATH="$PATH:$HOME/bin" make
+make install
+make distclean
+hash -r

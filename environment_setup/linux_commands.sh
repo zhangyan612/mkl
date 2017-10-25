@@ -146,7 +146,8 @@ sudo apt-get install unity-tweak-tool
 sudo apt-get install cairo-dock
 
 
-# remove python 3.4 first
+# remove python 3.4 first, bad idea, lots of dependencies on 3.4
+# so just install 3.5 and set alias
 sudo apt-get remove 'python3.*'
 
 # install python 3.5

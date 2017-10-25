@@ -175,6 +175,11 @@ ldconfig
 make installcheck
 
 
+
+
+# Moses
+
+cd ~/repos/opencog-all/moses
 # build moses have error
 
 # ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::get_default_error_string(boost::regex_constants::error_type)'
@@ -191,3 +196,18 @@ make installcheck
 # make[2]: *** [moses/comboreduct/main/action-reductor] Error 1
 # make[1]: *** [moses/comboreduct/main/CMakeFiles/action-reductor.dir/all] Error 2
 # make: *** [all] Error 2
+
+
+# It is solved by just adding the -lboost_regex to the compiling line so:
+
+-lboost_regex
+
+This works: $ g++ main.cc -o main -lboost_regex
+
+make -L /usr/lib64 -l boost_regex-mt
+
+make boost_regex-mt 
+
+-L /usr/lib64
+
+

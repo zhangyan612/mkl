@@ -12,3 +12,13 @@
 2. add machine learning capacity to auto le
 
     opencog and other modules
+
+
+Vision & 3D Modeling
+    https://click.intel.com/intelr-realsensetm-robotic-development-kit-2343.html
+    https://cappasity.com/easy-3d-scan/    # 3d scan 
+    http://education.rec.ri.cmu.edu/content/electronics/boe/ultrasonic_sensor/1.html
+    https://software.intel.com/en-us/realsense-sdk-windows-eol
+    https://canvas.io/sketchup
+    https://stimulant.com/depth-sensor-shootout-2/
+    http://cvgl.stanford.edu/data2/pr2dataset/
