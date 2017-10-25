@@ -174,3 +174,20 @@ ldconfig
 # check whether installed
 make installcheck
 
+
+# build moses have error
+
+# ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::get_default_error_string(boost::regex_constants::error_type)'
+# ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::cpp_regex_traits_implementation<char>::transform_primary(char const*, char const*) const'
+# ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::perl_matcher<__gnu_cxx::__normal_iterator<char const*, std::string>, std::allocator<boost::sub_match<__gnu_cxx::__normal_iterator<char const*, std::string> > >, boost::regex_traits<char, boost::cpp_regex_traits<char> > >::construct_init(boost::basic_regex<char, boost::regex_traits<char, boost::cpp_regex_traits<char> > > const&, boost::regex_constants::_match_flags)'
+# ../libcomboreduct.so: undefined reference to `boost::match_results<__gnu_cxx::__normal_iterator<char const*, std::string>, std::allocator<boost::sub_match<__gnu_cxx::__normal_iterator<char const*, std::string> > > >::maybe_assign(boost::match_results<__gnu_cxx::__normal_iterator<char const*, std::string>, std::allocator<boost::sub_match<__gnu_cxx::__normal_iterator<char const*, std::string> > > > const&)'
+# ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::get_mem_block()'
+# ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::raise_runtime_error(std::runtime_error const&)'
+# ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::put_mem_block(void*)'
+# ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::verify_options(unsigned int, boost::regex_constants::_match_flags)'
+# ../libcomboreduct.so: undefined reference to `boost::basic_regex<char, boost::regex_traits<char, boost::cpp_regex_traits<char> > >::do_assign(char const*, char const*, unsigned int)'
+# ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::cpp_regex_traits_implementation<char>::transform(char const*, char const*) const'
+# collect2: error: ld returned 1 exit status
+# make[2]: *** [moses/comboreduct/main/action-reductor] Error 1
+# make[1]: *** [moses/comboreduct/main/CMakeFiles/action-reductor.dir/all] Error 2
+# make: *** [all] Error 2

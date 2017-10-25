@@ -1,0 +1,14 @@
+# current plan 
+
+1. build real robot controlled by motors manually 
+
+    1. get two hand assembled, camera and speaker ready
+    2. wheels ready and assemble them
+    3. build api to control motors on computer through wifi (ROS or other)
+
+
+
+
+2. add machine learning capacity to auto le
+
+    opencog and other modules
