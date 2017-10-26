@@ -1,0 +1,33 @@
+software
+Autodesk Fusion 360
+
+Arms
+Cost analysis
+
+BetaBots-Robot-Arm-Project - open source
+https://github.com/zhangyan612/BetaBots-Robot-Arm-Project
+
+BCN3D - open source 
+http://www.instructables.com/id/Build-a-Giant-3D-Printed-Robot-Arm/
+
+KBK ROBOT ARM - open source
+https://www.thingiverse.com/thing:2006972
+
+
+RBX1 (Remix): 3D Printed 6 Axis Robot Arm Beta Kit
+ - only motors
+$829.00
+
+Veterobot -- vehicle
+https://hackaday.io/project/26001-veterobot
+
+
+promising - human hand 
+https://hackaday.io/project/2854-neolimb
+
+viralization 
+https://hackaday.io/project/4182-virtual-inmoov-robot-vinmoov
+
+
+open source hand
+http://openbionics.org/
