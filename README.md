@@ -20,6 +20,8 @@ replace voice to text engine with offline engine - low priority
 replace nlu engine to offline - low priority
 
 # idea
+## pseudo code conversion
+write program in pseudo code and let it automatically converted to programming language
 
 ## schema building
 
