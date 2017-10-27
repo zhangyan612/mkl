@@ -166,3 +166,9 @@ sudo make altinstall
 # set aliases
 alias python3=python3.5
 alias pip3=pip3.5
+
+
+# fix screen resolution issue
+# https://askubuntu.com/questions/73589/higher-screen-resolution-for-virtualbox
+sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
+# after install, do a software update 
