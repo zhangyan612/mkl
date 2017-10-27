@@ -175,6 +175,19 @@ ldconfig
 make installcheck
 
 
+# install hr tools to run robot 
+sudo apt install curl
+
+curl https://raw.githubusercontent.com/hansonrobotics/hrtool/master/get_hr.bash|bash
+
+# add workspace
+hr init robotics
+
+# need a large space
+hr install head
+
+hr run <robot>
+
 
 
 # Moses
