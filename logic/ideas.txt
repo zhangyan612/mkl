@@ -1,0 +1,8 @@
+try using pseudo code to run program 
+
+
+pseudo code to programming code
+
+research on arms, 3d print arm components 
+
+run it in a simulation environment using roboschool
