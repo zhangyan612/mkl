@@ -172,3 +172,6 @@ alias pip3=pip3.5
 # https://askubuntu.com/questions/73589/higher-screen-resolution-for-virtualbox
 sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
 # after install, do a software update 
+
+# backup and restore system 
+https://askubuntu.com/questions/7809/how-to-back-up-my-entire-system
