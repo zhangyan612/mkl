@@ -7,8 +7,6 @@
     3. build api to control motors on computer through wifi (ROS or other)
 
 
-
-
 2. add machine learning capacity to auto le
 
     opencog and other modules
@@ -22,3 +20,38 @@ Vision & 3D Modeling
     https://canvas.io/sketchup
     https://stimulant.com/depth-sensor-shootout-2/
     http://cvgl.stanford.edu/data2/pr2dataset/
+
+
+
+Motors
+
+L298N with rasperry pi
+
+    http://www.piddlerintheroot.com/l298n-dual-h-bridge/
+
+
+
+up and down (first design)
+https://www.youtube.com/watch?v=utKWU4w4M2A
+
+scaffold design
+Hydraulic lift platform
+Scissor Lift
+https://www.youtube.com/watch?v=J_VfCjKBGNw
+
+
+metal structure 
+https://www.servocity.com/ftc-competition-kit
+
+https://www.servocity.com/projects/view/project/id/229
+
+
+gripper design
+fish gripper
+elephant nose arm
+https://www.youtube.com/watch?v=Q1MBIaNuLa8
+
+
+
+hand  
+https://www.openbionics.com/shop/brunel-hand

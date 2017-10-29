@@ -2,24 +2,32 @@ software
 Autodesk Fusion 360
 
 Arms
+
+Collection of arm page
+https://github.com/hobofan/collected-robotic-arms
+
+
 Cost analysis
 
 BetaBots-Robot-Arm-Project - open source
+https://hackaday.io/project/3800-3d-printable-robot-arm
 https://github.com/zhangyan612/BetaBots-Robot-Arm-Project
 
 BCN3D - open source 
-http://www.instructables.com/id/Build-a-Giant-3D-Printed-Robot-Arm/
+http://www.dexcraft.com/articles/carbon-fiber-composites/aluminium-vs-carbon-fiber-comparison-of-materials/#rigidity_and_strength_relation_to_weight
 
 KBK ROBOT ARM - open source
 https://www.thingiverse.com/thing:2006972
 
 
 RBX1 (Remix): 3D Printed 6 Axis Robot Arm Beta Kit
- - only motors
+ - motors j
 $829.00
 
-Veterobot -- vehicle
-https://hackaday.io/project/26001-veterobot
+Arduino Braccio Robotic Arm
+
+
+http://www.robotshop.com/en/arduino-braccio-robotic-arm.html?gclid=Cj0KCQjw1dDPBRC_ARIsAJZrQfrWUvN-YC8bFED9XSoIFai-jnynOrxjovuLxKhhJzMPiI4WlZXFTAUaAq8DEALw_wcB
 
 
 promising - human hand 
@@ -31,3 +39,41 @@ https://hackaday.io/project/4182-virtual-inmoov-robot-vinmoov
 
 open source hand
 http://openbionics.org/
+
+Veterobot -- vehicle
+https://hackaday.io/project/26001-veterobot
+
+
+
+3d printing material
+https://www.matterhackers.com/3d-printer-filament-compare
+
+NylonX Polyamide With Chopped Carbon Fiber Strands - high strength
+
+https://airwolf3d.com/2017/07/24/strongest-3d-printer-filament/
+
+ABS VS PLA
+
+PLA: Strength: 7250 lb PSI, hold 285 lb, but not stable in hot temprature
+ABS: 4700 lb PSI
+NYLON 910   7000 lb PSI, hold 445 lb
+POLYCARBONATE 9800 lb PSI, lift 685 lb
+
+
+Human Bone Is Five Times Stronger Than Steel!
+
+# industrial materials
+
+https://theconversation.com/scientists-create-bone-like-material-that-is-lighter-than-water-but-as-strong-as-steel-22729
+
+Aluminium alloy
+carbon fiber
+
+http://www.dexcraft.com/articles/carbon-fiber-composites/aluminium-vs-carbon-fiber-comparison-of-materials/#rigidity_and_strength_relation_to_weight
+
+
+
+Climb stairs
+https://www.youtube.com/watch?v=bP7p5Bd2d50
+https://www.youtube.com/watch?v=yihwW4ywGqE
+take look at stair climbing wheelchair
