@@ -55,3 +55,6 @@ https://www.youtube.com/watch?v=Q1MBIaNuLa8
 
 hand  
 https://www.openbionics.com/shop/brunel-hand
+
+all open source hardware list 
+https://www.mouser.com/applications/open-source-hardware/

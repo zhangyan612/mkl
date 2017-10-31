@@ -1,0 +1,5 @@
+research on reasoning systems and see potential improvement 
+
+Goal: ability to conduct true reasoning and self learning and saving knowledge in a database
+
+Spatial reasoning concerns the locations of objects, their shapes, their relations to each other, and the paths they take as they move.
