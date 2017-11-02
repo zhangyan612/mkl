@@ -152,11 +152,31 @@ ant
 # The full set of options available for running can be found at README.md#using-relex. But, for testing run
 ./relation-extractor.sh
 
+
+# Running Relex2Logic with OpenCog
 # start relex server
 # go to relex root and run 
 ./opencog-server.sh
 
+# test whether it works , open a new terminal
+telnet localhost 4444
+this is a test.
 
+# connect to cogserver
+rlwrap telnet localhost 17001
+# enter scheme shell
+scm
+
+# parse sentense 
+(use-modules (opencog) (opencog nlp) (opencog nlp chatbot) (opencog nlp relex2logic))
+
+(nlp-parse "this is a test sentence")
+# returns 
+# ((SentenceNode "sentence@b8bc70dd-8688-45cb-9846-c3987aad38c0"))
+# Analyze the output
+# u can get the first ParseNode associated with a SentenceNode
+(car (sentence-get-parses (SentenceNode "sentence@b8bc70dd-8688-45cb-9846-c3987aad38c0")))
+(parse-get-r2l-outputs (ParseNode "sentence@b8bc70dd-8688-45cb-9846-c3987aad38c0_parse_0" (stv 1 0.991)))
 
 # link grammar
 sudo ./configure
@@ -240,3 +260,32 @@ cd ~/repos/opencog-all/moses/build/moses/moses/main/
 # 43 turns out to be the minimum number to reach a program with a perfect score. Feel free to decrease the number, which will give you programs that approximate the target feature less well, or increase the number, which makes the program run longer with the same result.
 # -W1 tells it to use the column labels we provided in the output programs, so we can understand them better. 
 
+
+
+# Running Relex2Logic
+
+
+
+
+
+# install ros related catkin
+# dependencies
+sudo apt-get install cmake python-catkin-pkg python-empy python-nose libgtest-dev
+
+sudo pip install -U catkin_pkg
+
+# not working
+sudo apt-get install ros-groovy-catkin
+sudo apt-get install ros-hydro-catkin
+
+
+# install ros
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list'
+wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add -
+
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+sudo apt-get update
+sudo apt-get install ros-lunar-desktop-full
+
+
+source /opt/ros/lunar/setup.bash
