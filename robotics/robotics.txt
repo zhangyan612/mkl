@@ -6,10 +6,13 @@
     2. wheels ready and assemble them
     3. build api to control motors on computer through wifi (ROS or other)
 
+2. enable basic skills like human have (vision, listening, speaking, movement, operate object)
 
-2. add machine learning capacity to auto le
+
+3. add machine learning capacity for advanced ability(reasoning, memory, learning)
 
     opencog and other modules
+
 
 
 Vision & 3D Modeling
@@ -23,12 +26,10 @@ Vision & 3D Modeling
 
 
 
-Motors
+Motors for movement
 
 L298N with rasperry pi
-
     http://www.piddlerintheroot.com/l298n-dual-h-bridge/
-
 
 
 up and down (first design)
@@ -50,7 +51,6 @@ gripper design
 fish gripper
 elephant nose arm
 https://www.youtube.com/watch?v=Q1MBIaNuLa8
-
 
 
 hand  

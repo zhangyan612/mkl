@@ -1,11 +1,12 @@
-software
+# design software
 Autodesk Fusion 360
 
-Arms
+
+
+# Arms
 
 Collection of arm page
 https://github.com/hobofan/collected-robotic-arms
-
 
 Cost analysis
 
@@ -26,9 +27,10 @@ $829.00
 
 Arduino Braccio Robotic Arm
 
-
 http://www.robotshop.com/en/arduino-braccio-robotic-arm.html?gclid=Cj0KCQjw1dDPBRC_ARIsAJZrQfrWUvN-YC8bFED9XSoIFai-jnynOrxjovuLxKhhJzMPiI4WlZXFTAUaAq8DEALw_wcB
 
+
+# Hands
 
 promising - human hand 
 https://hackaday.io/project/2854-neolimb
@@ -71,9 +73,14 @@ carbon fiber
 
 http://www.dexcraft.com/articles/carbon-fiber-composites/aluminium-vs-carbon-fiber-comparison-of-materials/#rigidity_and_strength_relation_to_weight
 
-
-
-Climb stairs
+# accessory
+# Climb stairs kit
 https://www.youtube.com/watch?v=bP7p5Bd2d50
 https://www.youtube.com/watch?v=yihwW4ywGqE
 take look at stair climbing wheelchair
+
+# cooking kit
+tools made for robot to cook easily
+
+# cleaning kit
+tool for robot to clean easily
