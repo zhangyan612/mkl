@@ -1,7 +1,6 @@
 # current plan 
 
 1. build real robot controlled by motors manually 
-
     1. get two hand assembled, camera and speaker ready
     2. wheels ready and assemble them
     3. build api to control motors on computer through wifi (ROS or other)
@@ -9,10 +8,15 @@
 2. enable basic skills like human have (vision, listening, speaking, movement, operate object)
 
 
-3. add machine learning capacity for advanced ability(reasoning, memory, learning)
+3. construct framework for solving real work issue  - build ability (in level of difficulty)
+    organizing stuff (move object from one location to another)
+    cleaning
+    cooking
+    washing dishes
+    
 
+4. add machine learning capacity for advanced ability(reasoning, memory, learning)
     opencog and other modules
-
 
 
 Vision & 3D Modeling
@@ -27,6 +31,15 @@ Vision & 3D Modeling
 
 
 Motors for movement
+autonomous movement
+https://software.intel.com/en-us/articles/build-an-autonomous-mobile-robot-with-the-intel-realsense-camera-ros-and-sawr
+
+simulating human head, hand walk movement
+https://software.intel.com/en-us/articles/project-avatar-a-gesture-controlled-fully-immersive-telepresence-robotics-system-with-nao
+
+grabbing object
+https://berkeleyautomation.github.io/dex-net/
+Grasp Quality Convolutional Neural Networks (GQ-CNNs)
 
 L298N with rasperry pi
     http://www.piddlerintheroot.com/l298n-dual-h-bridge/
