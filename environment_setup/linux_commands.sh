@@ -55,6 +55,9 @@ git add -A
 # Set the cache to timeout after 1 hour (setting is in seconds)
 git config --global credential.helper 'cache --timeout=3600'
 
+# push simple 
+git config --global push.default simple
+
 # get current user name 
 whoami
 
