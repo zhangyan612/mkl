@@ -45,6 +45,9 @@ gcc -v
 git config --global user.email "zhangyan612@gmail.com"
 git config --global user.name "Yan Zhang"
 
+# add untracked files 
+git add -A
+
 # git cache current user 
 # Set git to use the credential memory cache - default 15min
 # git config --global credential.helper cache
