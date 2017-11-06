@@ -2,3 +2,8 @@
 
 pip3 install pocketsphinx
 pip3 install pyaudio
+
+# try snowboy 
+pip3 install pyaudio
+sudo apt-get install libatlas-base-dev
+sudo apt-get install python-pyaudio python3-pyaudio sox

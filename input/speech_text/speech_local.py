@@ -124,9 +124,9 @@ class SpeechDetector:
         audio2send = []
         cur_data = ''  # current chunk of audio data
         rel = self.RATE/self.CHUNK
-        slid_win = deque(maxlen=self.SILENCE_LIMIT * rel)
+        slid_win = deque(maxlen=round(self.SILENCE_LIMIT * rel))
         #Prepend audio from 0.5 seconds before noise was detected
-        prev_audio = deque(maxlen=self.PREV_AUDIO * rel)
+        prev_audio = deque(maxlen=round(self.PREV_AUDIO * rel))
         started = False
 
         while True:
