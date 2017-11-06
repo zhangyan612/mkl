@@ -17,7 +17,19 @@
 import logging
 import numpy as np
 
-from triggers.trigger import Trigger
+class Trigger(object):
+
+    """Base class for a Trigger."""
+
+    def __init__(self):
+        self.callback = None
+
+    def set_callback(self, callback):
+        self.callback = callback
+
+    def start(self):
+        pass
+
 
 logger = logging.getLogger('trigger')
 
