@@ -181,3 +181,22 @@ sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-gues
 
 # backup and restore system 
 https://askubuntu.com/questions/7809/how-to-back-up-my-entire-system
+
+# install sphinxbase module dependencies
+# install automake in order to generate make file
+sudo apt-get install autoconf 
+sudo apt-get install bison
+
+# install sphinxbase
+./autogen.sh
+./configure
+make
+make check
+make install
+
+# install PocketSphinx
+./autogen.sh
+./configure
+make clean all
+make check
+sudo make install

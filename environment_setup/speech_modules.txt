@@ -1,0 +1,4 @@
+# requirements for speech recognition modules
+
+pip3 install pocketsphinx
+pip3 install pyaudio

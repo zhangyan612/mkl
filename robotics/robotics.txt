@@ -36,7 +36,7 @@ https://software.intel.com/en-us/articles/build-an-autonomous-mobile-robot-with-
 
 simulating human head, hand walk movement
 https://software.intel.com/en-us/articles/project-avatar-a-gesture-controlled-fully-immersive-telepresence-robotics-system-with-nao
-
+    
 grabbing object
 https://berkeleyautomation.github.io/dex-net/
 Grasp Quality Convolutional Neural Networks (GQ-CNNs)

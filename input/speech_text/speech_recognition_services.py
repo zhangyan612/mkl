@@ -89,8 +89,29 @@ def recognize_bing():
         print("Could not request results from bing Speech Recognition service; {0}".format(e))
         return "I cannot connect to web service"
 
+def recognize_sphinx():
+    t0 = clock()
+    r = sr.Recognizer()
+    m = sr.Microphone()
+    with m as source:
+        audio = r.listen(source)
+    t1 = clock()
+    try:
+        print('audio sent to sphinx')
+        response = r.recognize_sphinx(audio)
+        print("You said: " + response)
+        t2 = clock()
+        print('recording: %s seconds, api request: %s seconds' % (t1 - t0, t2 - t1))
+        return response
+    except sr.UnknownValueError:
+        print("bing Recognition could not understand audio")
+        return "I don't understand what you said"
+    except sr.RequestError as e:
+        print("Could not request results from bing Speech Recognition service; {0}".format(e))
+        return "I cannot connect to web service"
+
 if __name__ == "__main__":
+    # recognize_sphinx()
     recognize_bing()
-    # recognize_bing()
     # recognize_wit()
     # speech_text = recognize_wit()
