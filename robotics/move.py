@@ -15,7 +15,7 @@ def fwd():
     gpio.output(23, False)
     gpio.output(24, True)
 
-def back(tf):
+def back():
     init()
     gpio.output(17, True)
     gpio.output(22, False)
