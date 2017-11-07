@@ -8,7 +8,7 @@ def init():
  gpio.setup(23, gpio.OUT)
  gpio.setup(24, gpio.OUT)
 
-def forward(tf):
+def reverse(tf):
  init()
  gpio.output(17, True)
  gpio.output(22, False)
@@ -17,7 +17,7 @@ def forward(tf):
  time.sleep(tf)
  gpio.cleanup()
 
-def reverse(tf):
+def forward(tf):
  init()
  gpio.output(17, False)
  gpio.output(22, True)
@@ -26,5 +26,5 @@ def reverse(tf):
  time.sleep(tf)
  gpio.cleanup()
 
-forward(1)
+forward(2)
 reverse(1)
