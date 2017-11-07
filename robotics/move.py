@@ -12,7 +12,7 @@ def reverse(tf):
     init()
     gpio.output(17, True)
     gpio.output(22, False)
-    gpio.output(23, True) 
+    gpio.output(23, True)
     gpio.output(24, False)
     time.sleep(tf)
     gpio.cleanup()
@@ -29,26 +29,31 @@ def forward(tf):
 def left(tf):
     init()
     gpio.output(17, True)
-    gpio.output(22, True)
+    gpio.output(22, False)
     gpio.output(23, False)
-    gpio.output(24, False)
+    gpio.output(24, True)
     time.sleep(tf)
     gpio.cleanup()
 
 def right(tf):
     init()
     gpio.output(17, False)
-    gpio.output(22, False)
+    gpio.output(22, True)
     gpio.output(23, True)
-    gpio.output(24, True)
+    gpio.output(24, False)
     time.sleep(tf)
     gpio.cleanup()
 
 def stop():
-    gpio.output(17,gpio.LOW)
-    gpio.output(22,gpio.LOW)
+    gpio.output(17, gpio.LOW)
+    gpio.output(22, gpio.LOW)
+    gpio.output(23, gpio.LOW)
+    gpio.output(24, gpio.LOW)
+    gpio.cleanup()
 
-forward(1)
+
+
+forward(2)
 reverse(1)
 left(1)
 right(1)
