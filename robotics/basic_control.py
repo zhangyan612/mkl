@@ -1,10 +1,12 @@
 # from gopigo import *	#Has the basic functions for controlling the GoPiGo Robot
 import sys	#Used for closing the running program
 import move
-print("Press:\n\tw: Move Robot forward\n\ta: Turn Robot left\n\td: Turn Robot right\n\ts: Move Robot backward\n\tt: Increase speed\n\tg: Decrease speed\n\tx: Stop  Robot\n\tz: Exit\n")
+# t: Increase speed\n\tg: Decrease speed\n\t
+
+print("Press:\n\tw: Move Robot forward\n\ta: Turn Robot left\n\td: Turn Robot right\n\ts: Move Robot backward\n\tx: Stop  Robot\n\tz: Exit\n")
 while True:
-	print "Enter the Command:",
-	a=raw_input()	# Fetch the input from the terminal
+	print("Enter the Command:",
+	a=raw_input())	# Fetch the input from the terminal
 	if a=='w':
 		forward(1)	# Move forward
 	elif a=='a':

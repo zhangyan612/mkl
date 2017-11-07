@@ -52,9 +52,9 @@ def stop():
     gpio.cleanup()
 
 
-
-forward(2)
-reverse(1)
-left(1)
-right(1)
-stop()
+if __name__ == "__main__":
+    forward(2)
+    reverse(1)
+    left(1)
+    right(1)
+    stop()
