@@ -8,11 +8,11 @@ while True:
 	if a=='w':
 		forward(1)	# Move forward
 	elif a=='a':
-		left()	# Turn left
+		left(1)	# Turn left
 	elif a=='d':
-		right()	# Turn Right
+		right(1)	# Turn Right
 	elif a=='s':
-		reverse()	# Move back
+		reverse(1)	# Move back
 	elif a=='x':
 		stop()	# Stop
 	# elif a=='t':
