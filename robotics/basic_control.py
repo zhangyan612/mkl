@@ -1,6 +1,7 @@
 # from gopigo import *	#Has the basic functions for controlling the GoPiGo Robot
 import sys	#Used for closing the running program
 import move
+import time
 # t: Increase speed\n\tg: Decrease speed\n\t
 
 print("Press:\n\tw: Move Robot forward\n\ta: Turn Robot left\n\td: Turn Robot right\n\ts: Move Robot backward\n\tx: Stop  Robot\n\tz: Exit\n")
