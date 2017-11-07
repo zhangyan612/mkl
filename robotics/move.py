@@ -35,7 +35,6 @@ def forward(tf):
     time.sleep(tf)
     gpio.cleanup()
 
-
  def right(tf):
     init()
     gpio.output(17, False)
