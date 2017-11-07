@@ -26,5 +26,5 @@ def reverse(tf):
  time.sleep(tf)
  gpio.cleanup()
 
-forward(2)
-# reverse(2)
+forward(1)
+reverse(1)
