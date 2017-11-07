@@ -5,8 +5,7 @@ import move
 
 print("Press:\n\tw: Move Robot forward\n\ta: Turn Robot left\n\td: Turn Robot right\n\ts: Move Robot backward\n\tx: Stop  Robot\n\tz: Exit\n")
 while True:
-	print("Enter the Command:",
-	a=raw_input())	# Fetch the input from the terminal
+	a=input("Enter the Command:")	# Fetch the input from the terminal
 	if a=='w':
 		forward(1)	# Move forward
 	elif a=='a':
