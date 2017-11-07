@@ -8,13 +8,13 @@ print("Press:\n\tw: Move Robot forward\n\ta: Turn Robot left\n\td: Turn Robot ri
 while True:
 	a=input("Enter the Command:")	# Fetch the input from the terminal
 	if a=='w':
-		move.forward(1)	# Move forward
+		move.fwd()	# Move forward
 	elif a=='a':
-		move.left(1)	# Turn left
+		move.turn_left()	# Turn left
 	elif a=='d':
-		move.right(1)	# Turn Right
+		move.turn_right()	# Turn Right
 	elif a=='s':
-		move.reverse(1)	# Move back
+		move.back()	# Move back
 	elif a=='x':
 		move.stop()	# Stop
 	# elif a=='t':
