@@ -22,7 +22,7 @@ while True:
 	# elif a=='g':
 	# 	decrease_speed()	# Decrease speed
 	elif a=='z':
-		print("Exiting")		# Exit
+		print("Exiting")	# Exit
 		sys.exit()
 	else:
 		print("Wrong Command, Please Enter Again")

@@ -45,6 +45,9 @@ http://openbionics.org/
 Veterobot -- vehicle
 https://hackaday.io/project/26001-veterobot
 
+most advanced one
+http://bebionic.com/
+
 
 
 3d printing material
@@ -65,8 +68,14 @@ POLYCARBONATE 9800 lb PSI, lift 685 lb
 Human Bone Is Five Times Stronger Than Steel!
 
 # industrial materials
-
 https://theconversation.com/scientists-create-bone-like-material-that-is-lighter-than-water-but-as-strong-as-steel-22729
+
+# need to buy 
+Ball Casters - for all direction wheels
+
+high performance motor
+http://www.robotis.us/dynamixel/
+
 
 Aluminium alloy
 carbon fiber
