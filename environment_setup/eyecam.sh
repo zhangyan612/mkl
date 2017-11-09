@@ -1,12 +1,17 @@
 # set up microphone
 sudo apt-get install python-pyaudio python3-pyaudio sox
-
 pip install pyaudio
+sudo apt-get install libatlas-base-dev
 
-# testing 
+# testing recording and play
 rec temp.wav
-
 aplay /home/pi/temp.wav
+# list recording device
+arecord -l
+
+# test hotword detection
+python demo.py Alice.pmdl
+python demo.py snowboy.umdl
 
 # take picture
 sudo apt-get install fswebcam

@@ -14,17 +14,19 @@ def interrupt_callback():
     global interrupted
     return interrupted
 
-if len(sys.argv) == 1:
-    print("Error: need to specify model name")
-    print("Usage: python demo.py your.model")
-    sys.exit(-1)
+# if len(sys.argv) == 1:
+#     print("Error: need to specify model name")
+#     print("Usage: python demo.py your.model")
+#     sys.exit(-1)
 
-model = sys.argv[1]
+# model = sys.argv[1]
 
 # capture SIGINT signal, e.g., Ctrl+C
 signal.signal(signal.SIGINT, signal_handler)
 
-detector = snowboydecoder.HotwordDetector(model, sensitivity=0.5)
+detector = snowboydecoder.HotwordDetector("Alice.pmdl", sensitivity=0.5, audio_gain=1)
+
+# detector = snowboydecoder.HotwordDetector(model, sensitivity=0.5)
 print('Listening... Press Ctrl+C to exit')
 
 # main loop
