@@ -2,9 +2,11 @@
 sudo apt-get install python-pyaudio python3-pyaudio sox
 
 pip install pyaudio
-# testing 
 
+# testing 
 rec temp.wav
+
+aplay /home/pi/temp.wav
 
 # take picture
 sudo apt-get install fswebcam
