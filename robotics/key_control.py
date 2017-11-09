@@ -53,7 +53,7 @@
 # 	time.sleep(.01)
 
 
-
+# won't work unless doing vlc
 from tkinter import *
 def keyup(e):
     print('up', e.char)
