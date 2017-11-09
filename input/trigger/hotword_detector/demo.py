@@ -4,11 +4,9 @@ import signal
 
 interrupted = False
 
-
 def signal_handler(signal, frame):
     global interrupted
     interrupted = True
-
 
 def interrupt_callback():
     global interrupted
@@ -23,7 +21,6 @@ def interrupt_callback():
 
 # capture SIGINT signal, e.g., Ctrl+C
 signal.signal(signal.SIGINT, signal_handler)
-
 detector = snowboydecoder.HotwordDetector("Alice.pmdl", sensitivity=0.5, audio_gain=1)
 
 # detector = snowboydecoder.HotwordDetector(model, sensitivity=0.5)

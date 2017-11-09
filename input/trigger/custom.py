@@ -1,22 +1,26 @@
-# Copyright 2017 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+"""Detect keyword in the audio stream."""
 
-"""Detect claps in the audio stream."""
+import snowboydecoder
+import sys
+import signal
 
 import logging
 import numpy as np
 
+
+interrupted = False
+
+
+def signal_handler(signal, frame):
+    global interrupted
+    interrupted = True
+
+
+def interrupt_callback():
+    global interrupted
+    return interrupted
+
+# import trigger in aiy project
 class Trigger(object):
 
     """Base class for a Trigger."""
@@ -41,24 +45,39 @@ class CustomTrigger(Trigger):
     def __init__(self, recorder):
         super().__init__()
 
-        self.have_clap = True  # don't start yet
+        self.have_keyword = True  # don't start yet
         self.prev_sample = 0
         recorder.add_processor(self)
 
     def start(self):
         self.prev_sample = 0
-        self.have_clap = False
+        self.have_keyword = False
+
+    def detected(self):
+        self.have_keyword = True
+        self.callback()
 
     def add_data(self, data):
+        # capture SIGINT signal, e.g., Ctrl+C
+        signal.signal(signal.SIGINT, signal_handler)
+        detector = snowboydecoder.HotwordDetector("Alice.pmdl", sensitivity=0.5, audio_gain=1)
+        # detector = snowboydecoder.HotwordDetector(model, sensitivity=0.5)
+        print('Listening... Press Ctrl+C to exit')
+        # main loop
+        detector.start(detected_callback=self.detected(),
+                    interrupt_check=interrupt_callback,
+                    sleep_time=0.03)
+        detector.terminate()
+
         """ audio is mono 16bit signed at 16kHz """
-        audio = np.fromstring(data, 'int16')
-        if not self.have_clap:
-            # alternative: np.abs(audio).sum() > thresh
-            shifted = np.roll(audio, 1)
-            shifted[0] = self.prev_sample
-            val = np.max(np.abs(shifted - audio))
-            if val > (65536 // 4):  # quarter max delta
-                logger.info("clap detected")
-                self.have_clap = True
-                self.callback()
-        self.prev_sample = audio[-1]
+        # audio = np.fromstring(data, 'int16')
+        # if not self.have_keyword:
+        #     # alternative: np.abs(audio).sum() > thresh
+        #     shifted = np.roll(audio, 1)
+        #     shifted[0] = self.prev_sample
+        #     val = np.max(np.abs(shifted - audio))
+        #     if val > (65536 // 4):  # quarter max delta
+        #         logger.info("clap detected")
+        #         self.have_keyword = True
+        #         self.callback()
+        # self.prev_sample = audio[-1]
