@@ -22,6 +22,9 @@ ctrl + H
 # list installed 
 sudo apt list --installed | less
 
+# To remove all the contents of the folder(including all interior folders) but not the folder itself: 
+rm -rf /path/to/directory/*
+rm -rf /var/lib/motion/*
 
 # update gcc to latest version 
 sudo apt-get update && \
@@ -64,7 +67,8 @@ whoami
 # grant admin to user
 sudo usermod -a -G sudo yan
 sudo usermod -a -G root yan
-
+# give sudo to pi
+sudo usermod -a -G sudo pi
 # rename the user name and change folder 
 sudo usermod -l yan chengxin
 
