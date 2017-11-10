@@ -79,6 +79,10 @@ usermod -d /home/yan -m yan
 # change folder permission to allow everyone edit 
 sudo chmod -R ugo+rw ~/repos
 sudo chmod -R ugo+rw ~/catkin_ws
+sudo chmod -R ugo+rw /home/yan/.ros
+
+# make file executible
+chmod +x scriptname
 
 # update boost to 1.60
 cd /usr/local

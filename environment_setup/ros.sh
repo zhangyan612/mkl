@@ -7,6 +7,8 @@ sudo rosdep init
 rosdep update
 echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
 source ~/.bashrc
+# add into bashrc file
+
 sudo apt-get install python-rosinstall
 
 # install catkin tools
@@ -30,5 +32,16 @@ catkin_create_pkg location_monitor std_msgs rospy roscpp
 # show odom message
 rosmsg show nav_msgs/Odometry
 
-# build
+# show list of topics
+rostopic list
+
+rostopic echo /closest_landmark
+
+# build at root level 
 catkin_make
+
+# package level build
+catkin build
+
+# if there are previous build, clean it
+catkin clean
