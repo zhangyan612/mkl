@@ -71,3 +71,7 @@ https://www.openbionics.com/shop/brunel-hand
 
 all open source hardware list 
 https://www.mouser.com/applications/open-source-hardware/
+
+Whole body
+https://roboticdreams.wordpress.com/2016/04/23/building-a-3-d-printed-robot-part-1/
+http://inmoov.fr/

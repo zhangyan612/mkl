@@ -67,6 +67,7 @@ whoami
 # grant admin to user
 sudo usermod -a -G sudo yan
 sudo usermod -a -G root yan
+sudo adduser yan sudo
 # give sudo to pi
 sudo usermod -a -G sudo pi
 # rename the user name and change folder 
@@ -77,7 +78,7 @@ usermod -d /home/yan -m yan
 
 # change folder permission to allow everyone edit 
 sudo chmod -R ugo+rw ~/repos
-
+sudo chmod -R ugo+rw ~/catkin_ws
 
 # update boost to 1.60
 cd /usr/local
