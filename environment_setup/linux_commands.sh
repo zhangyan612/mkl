@@ -61,6 +61,10 @@ git config --global credential.helper 'cache --timeout=3600'
 # push simple 
 git config --global push.default simple
 
+# switch github origin
+git remote set-url origin https://github.com/zhangyan612/atomspace.git
+
+
 # get current user name 
 whoami
 
@@ -76,10 +80,17 @@ sudo usermod -l yan chengxin
 To change home-folder, use
 usermod -d /home/yan -m yan
 
+adduser yan sudo
+
+# add no password for user
+echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+
 # change folder permission to allow everyone edit 
 sudo chmod -R ugo+rw ~/repos
 sudo chmod -R ugo+rw ~/catkin_ws
 sudo chmod -R ugo+rw /home/yan/.ros
+sudo chmod -R ugo+rw ~/opencog
 
 # make file executible
 chmod +x scriptname
@@ -110,7 +121,6 @@ sudo apt-get install git
 ls /etc/apt/sources.list.d
 sudo rm -i /etc/apt/sources.list.d/boost-latest-ppa-trusty.list
 # confirm by typing y
-
 
 # installed boost package
 libboost-atomic1.54-dev/trusty-updates,now 1.54.0-4ubuntu3.1 amd64 [installed,automatic]
@@ -161,6 +171,12 @@ sudo apt-get install unity-tweak-tool
 sudo apt-get install cairo-dock
 
 
+# install tmux
+apt get install tmux
+
+ctrl + b # but not work
+
+# don't do it
 # remove python 3.4 first, bad idea, lots of dependencies on 3.4
 # so just install 3.5 and set alias
 sudo apt-get remove 'python3.*'
