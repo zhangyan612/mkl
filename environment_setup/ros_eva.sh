@@ -38,4 +38,4 @@ find . -maxdepth 1 -mindepth 1 -type d \
 
 # Make sure we really have the lastest chatbot scripts
 
-cd /opencog/opencog/build; cmake ..; make install
+cd ~/opencog/opencog/build; cmake ..; make install

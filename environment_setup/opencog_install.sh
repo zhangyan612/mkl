@@ -86,7 +86,6 @@ guile
 (sql-open "postgres:///mycogdata?user=opencog_user&password=cheese")
 
 
-
 # test opencog rest api 
 # check whether bashrc file exist 
 cd ~
@@ -127,23 +126,44 @@ python converter.py
 python load.py
 
 
-
 # install relex 
+
+# opennlp is an optional dependency and can be installed by running the following steps after downloading it from http://sourceforge.net/projects/opennlp/
+# OpenNLP - Never changes, so do this first.
+wget http://www-us.apache.org/dist/opennlp/opennlp-1.5.3/apache-opennlp-1.5.3-bin.tar.gz apache-opennlp-1.5.3-bin.tar.gz
+tar -zxf apache-opennlp-1.5.3-bin.tar.gz ;\
+    cd apache-opennlp-1.5.3; \
+    cp lib/*.jar /usr/local/share/java/; \
+    cp lib/*.jar /usr/share/java/; \
+    cp lib/opennlp-tools-1.5.3.jar /usr/local/share/java/opennlp-tools-1.5.0.jar; \
+    cd .. ; rm -rf apache-opennlp*
+
+
+# Link Parser -- changes often
+# Download the current released version of link-grammar.
+# The wget gets the latest version w/ wildcard
+# wget -r --no-parent -nH --cut-dirs=2 http://www.abisource.com/downloads/link-grammar/current/
+# tar -zxf current/link-grammar-5*.tar.gz ;\
+#     cd link-grammar-5.*/; ./configure; make -j6; sudo make install; \
+#     ldconfig; cd .. ; rm -rf * link-grammar*
+
+
 # opencog initial installation will get it installed, so don't worry about following
-# install dependencies
+# install dependencies 
 cd repos/opencog-all/relex
 cd install-scripts
 ./install-ubuntu-dependencies.sh
 
 
 # opennlp is an optional dependency and can be installed by running the following steps after downloading it from http://sourceforge.net/projects/opennlp/
-tar -xvf opennlp-tools-1.5.0.tgz
-cd opennlp-tools-1.5.0
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-./build.sh
-sudo cp output/opennlp-tools-1.5.0.jar /usr/local/share/java/
-sudo cp lib/maxent-2.5.2.jar /usr/local/share/java/
-sudo cp lib/trove.jar /usr/local/share/java/
+# wget http://www-us.apache.org/dist/opennlp/opennlp-1.5.3/apache-opennlp-1.5.3-bin.tar.gz apache-opennlp-1.5.3-bin.tar.gz
+# tar -xvf opennlp-tools-1.5.0.tgz
+# cd opennlp-tools-1.5.0
+# export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+# ./build.sh
+# sudo cp output/opennlp-tools-1.5.0.jar /usr/local/share/java/
+# sudo cp lib/maxent-2.5.2.jar /usr/local/share/java/
+# sudo cp lib/trove.jar /usr/local/share/java/
 
 # To build relex run
 ant
@@ -218,6 +238,8 @@ hr run <robot>
 cd ~/repos/opencog-all/moses
 # build moses have error
 
+apt-get -y install r-base
+
 # ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::get_default_error_string(boost::regex_constants::error_type)'
 # ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::cpp_regex_traits_implementation<char>::transform_primary(char const*, char const*) const'
 # ../libcomboreduct.so: undefined reference to `boost::re_detail_106000::perl_matcher<__gnu_cxx::__normal_iterator<char const*, std::string>, std::allocator<boost::sub_match<__gnu_cxx::__normal_iterator<char const*, std::string> > >, boost::regex_traits<char, boost::cpp_regex_traits<char> > >::construct_init(boost::basic_regex<char, boost::regex_traits<char, boost::cpp_regex_traits<char> > > const&, boost::regex_constants::_match_flags)'
@@ -264,10 +286,6 @@ cd ~/repos/opencog-all/moses/build/moses/moses/main/
 
 # Running Relex2Logic
 
-
-
-
-
 # install ros related catkin
 # dependencies
 sudo apt-get install cmake python-catkin-pkg python-empy python-nose libgtest-dev
@@ -289,3 +307,97 @@ sudo apt-get install ros-lunar-desktop-full
 
 
 source /opt/ros/lunar/setup.bash
+
+
+# install tools
+apt-get -y install \
+            git-gui \
+            meld \
+            qtcreator
+
+# Workspace configuration
+COPY qtcreator-startup-script.sh /home/opencog/
+RUN chown opencog:opencog /home/opencog/qtcreator-startup-script.sh
+USER opencog
+CMD /home/opencog/qtcreator-startup-script.sh
+
+
+# install Ros indigo opencog eva
+apt-get install byobu
+
+
+# eva-opencog
+
+# installation
+cd ~/catkin_ws/src
+
+git clone https://github.com/hansonrobotics/pi_vision.git
+git clone https://github.com/hansonrobotics/perception.git
+git clone https://github.com/hansonrobotics/blender_api_msgs.git
+git clone https://github.com/hansonrobotics/blender_api.git
+git clone https://github.com/hansonrobotics/pau2motors.git
+git clone https://github.com/hansonrobotics/robots_config.git
+
+cd ~/opencog && git clone https://github.com/opencog/ros-behavior-scripting.git
+
+# update all package
+cd ~/opencog/ && find . -maxdepth 1 -mindepth 1 -type d \
+   -execdir git --git-dir=$PWD/{}/.git --work-tree=$PWD/{} pull \;
+
+# build behavior scripting 
+cd ~/opencog/ros-behavior-scripting
+
+bash scripts/setup.sh
+bash scripts/install.sh
+
+# bash scripts/run.sh eva
+
+# Pre-compile the guile modules.
+RUN (bash -l -c "echo \"(use-modules (opencog eva-model))\" | guile ")
+RUN (bash -l -c "echo \"(use-modules (opencog eva-behvaior))\" | guile ")
+
+# Git pull for all ROS packages
+cd ~/catkin_ws/src/ && find . -maxdepth 1 -mindepth 1 -type d \
+	-execdir git --git-dir=$PWD/{}/.git --work-tree=$PWD/{} pull \;
+
+# The blender API has not been fully catkinized yet.
+RUN pip3 install ./blender_api_msgs/
+
+
+# mkdir ~/opencog/ros-behavior-scripting/build
+# cd ~/opencog/ros-behavior-scripting/build
+
+# running
+
+# start roscore
+roscore
+# byobu new-session -d -n 'ros' 'roscore; $SHELL'
+
+# Run the relex parse server.
+cd ~/opencog/relex && ./opencog-server.sh
+
+# # Single Video (body) camera and face tracker.
+# tmux new-window -n 'trk' 'roslaunch robots_config tracker-single-cam.launch; $SHELL'
+
+# # Publish the geometry messages. This includes tf2 which holds
+# # the face locations.
+# tmux new-window -n 'geo' 'roslaunch robots_config geometry.launch gui:=false; $SHELL'
+
+# ### Start the blender GUI.
+# tmux new-window -n 'eva' 'cd /catkin_ws/src/blender_api && blender -y Eva.blend -P autostart.py; $SHELL'
+
+# # Start the IRC chatbot bridge.
+# tmux new-window -n 'irc' 'cd /opencog/opencog/build/opencog/nlp/irc && ./cogita -n ieva -f "Robot Eva" -t 17020; ; $SHELL'
+
+# # Start the cogserver.
+# # It seems to take more than 5 seconds to load all scripts!?
+# tmux new-window -n 'cog' 'cd /opencog/ros-behavior-scripting/src && guile -l btree-eva.scm ; $SHELL'
+# sleep 5
+
+# # Run the new face tracker.
+# tmux new-window -n 'fac' 'cd /opencog/ros-behavior-scripting/face_track && ./main.py ; $SHELL'
+
+
+# start opencog cogita service chatbot 
+cd ~/opencog/opencog/build/opencog/nlp/irc 
+./cogita -n ieva -f "Robot Eva" -t 17020
