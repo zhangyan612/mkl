@@ -353,15 +353,29 @@ bash scripts/install.sh
 # bash scripts/run.sh eva
 
 # Pre-compile the guile modules.
-RUN (bash -l -c "echo \"(use-modules (opencog eva-model))\" | guile ")
-RUN (bash -l -c "echo \"(use-modules (opencog eva-behvaior))\" | guile ")
+guile
+(use-modules (opencog eva-model))
+(use-modules (opencog eva-behvaior))
+
+# RUN (bash -l -c "echo \"(use-modules (opencog eva-model))\" | guile ")
+# RUN (bash -l -c "echo \"(use-modules (opencog eva-behvaior))\" | guile ")
 
 # Git pull for all ROS packages
-cd ~/catkin_ws/src/ && find . -maxdepth 1 -mindepth 1 -type d \
+cd ~/catkin_ws/src/
+
+find . -maxdepth 1 -mindepth 1 -type d \
 	-execdir git --git-dir=$PWD/{}/.git --work-tree=$PWD/{} pull \;
 
 # The blender API has not been fully catkinized yet.
-RUN pip3 install ./blender_api_msgs/
+pip3 install ./blender_api_msgs/
+
+cd ~/catkin_ws
+/opt/ros/indigo/bin/catkin_make
+
+source ~/catkin_ws/devel/setup.bash >> ~/.bashrc
+# copy modified eva.sh to catkin root
+# cp /scripts/eva.sh /catkin_ws/eva.sh
+cp ~/repos/mkl/environment_setup/eva.sh ~/catkin_ws/eva.sh
 
 
 # mkdir ~/opencog/ros-behavior-scripting/build
@@ -376,26 +390,28 @@ roscore
 # Run the relex parse server.
 cd ~/opencog/relex && ./opencog-server.sh
 
-# # Single Video (body) camera and face tracker.
-# tmux new-window -n 'trk' 'roslaunch robots_config tracker-single-cam.launch; $SHELL'
+# Run the relex parse server.
+tmux new-window -n 'rlx' 'cd ~/opencog/relex && ./opencog-server.sh ; $SHELL'
 
-# # Publish the geometry messages. This includes tf2 which holds
-# # the face locations.
-# tmux new-window -n 'geo' 'roslaunch robots_config geometry.launch gui:=false; $SHELL'
+# Single Video (body) camera and face tracker.
+tmux new-window -n 'trk' 'roslaunch robots_config tracker-single-cam.launch; $SHELL'
 
-# ### Start the blender GUI.
-# tmux new-window -n 'eva' 'cd /catkin_ws/src/blender_api && blender -y Eva.blend -P autostart.py; $SHELL'
+# Publish the geometry messages. This includes tf2 which holds
+# the face locations.
+tmux new-window -n 'geo' 'roslaunch robots_config geometry.launch gui:=false; $SHELL'
+
+### Start the blender GUI.
+tmux new-window -n 'eva' 'cd ~/catkin_ws/src/blender_api && blender -y Sophia.blend -P autostart.py; $SHELL'
 
 # # Start the IRC chatbot bridge.
-# tmux new-window -n 'irc' 'cd /opencog/opencog/build/opencog/nlp/irc && ./cogita -n ieva -f "Robot Eva" -t 17020; ; $SHELL'
+# tmux new-window -n 'irc' 'cd ~/opencog/opencog/build/opencog/nlp/irc && ./cogita -n ieva -f "Robot Eva" -t 17020; ; $SHELL'
 
-# # Start the cogserver.
-# # It seems to take more than 5 seconds to load all scripts!?
-# tmux new-window -n 'cog' 'cd /opencog/ros-behavior-scripting/src && guile -l btree-eva.scm ; $SHELL'
-# sleep 5
+# Start the cogserver.
+# It seems to take more than 5 seconds to load all scripts!?
+tmux new-window -n 'cog' 'cd ~/opencog/opencog/opencog/eva/src && guile -l btree-eva.scm ; $SHELL'
 
-# # Run the new face tracker.
-# tmux new-window -n 'fac' 'cd /opencog/ros-behavior-scripting/face_track && ./main.py ; $SHELL'
+# Run the new face tracker.
+tmux new-window -n 'fac' 'cd ~/opencog/ros-behavior-scripting/sensors && ./main.py ; $SHELL'
 
 
 # start opencog cogita service chatbot 
