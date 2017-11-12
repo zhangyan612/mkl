@@ -178,7 +178,7 @@ ant
 # go to relex root and run 
 ./opencog-server.sh
 
-# test whether it works , open a new terminal
+# test whether it works, open a new terminal
 telnet localhost 4444
 this is a test.
 
@@ -371,7 +371,9 @@ pip3 install ./blender_api_msgs/
 
 cd ~/catkin_ws
 /opt/ros/indigo/bin/catkin_make
+make install
 
+echo source ~/catkin_ws/devel/setup.bash >> ~/.bashrc
 source ~/catkin_ws/devel/setup.bash >> ~/.bashrc
 # copy modified eva.sh to catkin root
 # cp /scripts/eva.sh /catkin_ws/eva.sh
@@ -387,33 +389,42 @@ cp ~/repos/mkl/environment_setup/eva.sh ~/catkin_ws/eva.sh
 roscore
 # byobu new-session -d -n 'ros' 'roscore; $SHELL'
 
-# Run the relex parse server.
-cd ~/opencog/relex && ./opencog-server.sh
+# # Run the relex parse server.
+# cd ~/opencog/relex && ./opencog-server.sh
 
-# Run the relex parse server.
+# Run the relex parse server. work
 tmux new-window -n 'rlx' 'cd ~/opencog/relex && ./opencog-server.sh ; $SHELL'
 
-# Single Video (body) camera and face tracker.
-tmux new-window -n 'trk' 'roslaunch robots_config tracker-single-cam.launch; $SHELL'
+# Single Video (body) camera and face tracker. work
+roslaunch perception tracker-single-cam.launch
+# tmux new-window -n 'trk' 'cd ~/catkin_ws/src/perception/launch && roslaunch tracker-single-cam.launch; $SHELL'
 
 # Publish the geometry messages. This includes tf2 which holds
-# the face locations.
-tmux new-window -n 'geo' 'roslaunch robots_config geometry.launch gui:=false; $SHELL'
+# the face locations. Not working
+# roslaunch perception geometry.launch
+roslaunch perception geometry.launch model:=description.urdf
+# tmux new-window -n 'geo' 'cd ~/catkin_ws/src/perception/launch && roslaunch geometry.launch gui:=false; $SHELL'
 
-### Start the blender GUI.
+### Start the blender GUI. work
 tmux new-window -n 'eva' 'cd ~/catkin_ws/src/blender_api && blender -y Sophia.blend -P autostart.py; $SHELL'
 
 # # Start the IRC chatbot bridge.
-# tmux new-window -n 'irc' 'cd ~/opencog/opencog/build/opencog/nlp/irc && ./cogita -n ieva -f "Robot Eva" -t 17020; ; $SHELL'
+tmux new-window -n 'irc' 'cd ~/opencog/opencog/build/opencog/nlp/irc && ./cogita -n ieva -f "Robot Eva" -t 17020; ; $SHELL'
 
-# Start the cogserver.
+# Start the cogserver. 
+# start form build directory
+cp ~/opencog/opencog/build/lib/opencog.conf ~/opencog/opencog/build/opencog/cogserver/server/my.conf
+cd ~/opencog/opencog/build/opencog/cogserver/server && cogserver -c  my.conf
+
+# start from scm file
+# cp ~/opencog/opencog/build/lib/opencog.conf ~/opencog/opencog/opencog/eva/scripts
 # It seems to take more than 5 seconds to load all scripts!?
 tmux new-window -n 'cog' 'cd ~/opencog/opencog/opencog/eva/src && guile -l btree-eva.scm ; $SHELL'
 
-# Run the new face tracker.
+# Run the new face tracker. will work when fix cogserver
 tmux new-window -n 'fac' 'cd ~/opencog/ros-behavior-scripting/sensors && ./main.py ; $SHELL'
 
 
-# start opencog cogita service chatbot 
-cd ~/opencog/opencog/build/opencog/nlp/irc 
-./cogita -n ieva -f "Robot Eva" -t 17020
+# # start opencog cogita service chatbot 
+# cd ~/opencog/opencog/build/opencog/nlp/irc 
+# ./cogita -n ieva -f "Robot Eva" -t 17020
