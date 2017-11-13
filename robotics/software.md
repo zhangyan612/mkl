@@ -1,12 +1,11 @@
 # current plan 
-
 1. build real robot controlled by motors manually 
     1. get two hand assembled, camera and speaker ready
     2. wheels ready and assemble them
     3. build api to control motors on computer through wifi (ROS or other)
+    4. construct software foundation based on ros 
 
 2. enable basic skills like human have (vision, listening, speaking, movement, operate object)
-
 
 3. construct framework for solving real work issue  - build ability (in level of difficulty)
     organizing stuff (move object from one location to another)
@@ -14,12 +13,27 @@
     cooking
     washing dishes
     
-
 4. add machine learning capacity for advanced ability(reasoning, memory, learning)
     opencog and other modules
 
 
-Vision & 3D Modeling
+# TODO
+1. raspberry pi to arduion   http://www.instructables.com/id/Interface-Python-and-Arduino-with-pySerial/
+2. research on realsense Autonomous Mobile Robot
+3. opencog eva chatbot fix
+
+# design software
+Autodesk Fusion 360
+
+# visualization of inmoov robot
+https://hackaday.io/project/4182-virtual-inmoov-robot-vinmoov
+
+
+# connecting raspberry pi to arduino
+http://www.meccanismocomplesso.org/en/controlling-arduino-raspberry-pi/
+
+
+# Vision & 3D Modeling
     https://click.intel.com/intelr-realsensetm-robotic-development-kit-2343.html
     https://cappasity.com/easy-3d-scan/    # 3d scan 
     http://education.rec.ri.cmu.edu/content/electronics/boe/ultrasonic_sensor/1.html
@@ -29,49 +43,14 @@ Vision & 3D Modeling
     http://cvgl.stanford.edu/data2/pr2dataset/
 
 
-
-Motors for movement
-autonomous movement
+# Motors for movement
+# autonomous movement
 https://software.intel.com/en-us/articles/build-an-autonomous-mobile-robot-with-the-intel-realsense-camera-ros-and-sawr
+https://github.com/01org/sawr.git
 
-simulating human head, hand walk movement
+# simulating human head, hand walk movement
 https://software.intel.com/en-us/articles/project-avatar-a-gesture-controlled-fully-immersive-telepresence-robotics-system-with-nao
-    
-grabbing object
+
+# grabbing object
 https://berkeleyautomation.github.io/dex-net/
 Grasp Quality Convolutional Neural Networks (GQ-CNNs)
-
-L298N with rasperry pi
-    http://www.piddlerintheroot.com/l298n-dual-h-bridge/
-
-
-up and down (first design)
-https://www.youtube.com/watch?v=utKWU4w4M2A
-
-scaffold design
-Hydraulic lift platform
-Scissor Lift
-https://www.youtube.com/watch?v=J_VfCjKBGNw
-
-
-metal structure 
-https://www.servocity.com/ftc-competition-kit
-
-https://www.servocity.com/projects/view/project/id/229
-
-
-gripper design
-fish gripper
-elephant nose arm
-https://www.youtube.com/watch?v=Q1MBIaNuLa8
-
-
-hand  
-https://www.openbionics.com/shop/brunel-hand
-
-all open source hardware list 
-https://www.mouser.com/applications/open-source-hardware/
-
-Whole body
-https://roboticdreams.wordpress.com/2016/04/23/building-a-3-d-printed-robot-part-1/
-http://inmoov.fr/

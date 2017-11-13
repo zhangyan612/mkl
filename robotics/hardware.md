@@ -1,0 +1,125 @@
+# TODO 
+1. research on lower body base and build one
+2. print out upper body
+
+# open source upper body
+https://roboticdreams.wordpress.com/2016/04/23/building-a-3-d-printed-robot-part-1/
+http://inmoov.fr/
+
+# L298N with rasperry pi
+    http://www.piddlerintheroot.com/l298n-dual-h-bridge/
+
+# scaffold design
+# up and down (first design)
+https://www.youtube.com/watch?v=utKWU4w4M2A
+scaffold design
+Hydraulic lift platform
+Scissor Lift
+https://www.youtube.com/watch?v=J_VfCjKBGNw
+
+# Metal structure 
+https://www.servocity.com/ftc-competition-kit
+https://www.servocity.com/projects/view/project/id/229
+
+# bionic gripper design
+fish gripper
+elephant nose arm
+https://www.youtube.com/watch?v=Q1MBIaNuLa8
+
+# high performance motor
+http://www.robotis.us/dynamixel/
+
+# Arms
+Collection of arm page
+https://github.com/hobofan/collected-robotic-arms
+
+Cost analysis
+
+BetaBots-Robot-Arm-Project - open source
+https://hackaday.io/project/3800-3d-printable-robot-arm
+https://github.com/zhangyan612/BetaBots-Robot-Arm-Project
+
+BCN3D - open source 
+http://www.dexcraft.com/articles/carbon-fiber-composites/aluminium-vs-carbon-fiber-comparison-of-materials/#rigidity_and_strength_relation_to_weight
+
+KBK ROBOT ARM - open source
+https://www.thingiverse.com/thing:2006972
+
+RBX1 (Remix): 3D Printed 6 Axis Robot Arm Beta Kit
+ - motors j
+$829.00
+
+Arduino Braccio Robotic Arm
+http://www.robotshop.com/en/arduino-braccio-robotic-arm.html?gclid=Cj0KCQjw1dDPBRC_ARIsAJZrQfrWUvN-YC8bFED9XSoIFai-jnynOrxjovuLxKhhJzMPiI4WlZXFTAUaAq8DEALw_wcB
+
+
+# Hands
+promising - human hand 
+https://hackaday.io/project/2854-neolimb
+
+open source hand
+http://openbionics.org/
+https://www.openbionics.com/shop/brunel-hand
+
+Veterobot -- vehicle
+https://hackaday.io/project/26001-veterobot
+
+most advanced one
+http://bebionic.com/
+
+# all open source hardware list 
+https://www.mouser.com/applications/open-source-hardware/
+
+
+# single board computer
+http://beagleboard.org/
+
+orange pi
+https://opensource.com/article/17/1/how-to-orange-pi
+https://github.com/orangepi-xunlong
+
+
+# 3d printing material
+https://www.matterhackers.com/3d-printer-filament-compare
+
+NylonX Polyamide With Chopped Carbon Fiber Strands - high strength
+
+https://airwolf3d.com/2017/07/24/strongest-3d-printer-filament/
+
+ABS VS PLA
+
+PLA: Strength: 7250 lb PSI, hold 285 lb, but not stable in hot temprature
+ABS: 4700 lb PSI
+NYLON 910   7000 lb PSI, hold 445 lb
+POLYCARBONATE 9800 lb PSI, lift 685 lb
+
+Human Bone Is Five Times Stronger Than Steel!
+
+Aluminium alloy
+carbon fiber
+http://www.dexcraft.com/articles/carbon-fiber-composites/aluminium-vs-carbon-fiber-comparison-of-materials/#rigidity_and_strength_relation_to_weight
+
+# industrial materials
+https://theconversation.com/scientists-create-bone-like-material-that-is-lighter-than-water-but-as-strong-as-steel-22729
+
+
+# Shopping List
+1. RIGHT ANGLE MALE HEADER 
+2. Ball Casters - for all direction wheels
+
+
+
+# Future plan for Robot Accessory
+# Climb stairs kit
+https://www.youtube.com/watch?v=bP7p5Bd2d50
+https://www.youtube.com/watch?v=yihwW4ywGqE
+take look at stair climbing wheelchair
+
+# cooking kit
+tools made for robot to cook easily
+
+# cleaning kit
+tool for robot to clean easily
+
+
+
