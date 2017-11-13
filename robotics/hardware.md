@@ -115,6 +115,11 @@ https://www.youtube.com/watch?v=bP7p5Bd2d50
 https://www.youtube.com/watch?v=yihwW4ywGqE
 take look at stair climbing wheelchair
 
+https://www.youtube.com/watch?v=hBFf0pZjY94
+https://www.youtube.com/watch?v=JD1Su34tI_Q
+https://www.youtube.com/watch?v=GK_H5m5Ish8
+https://www.youtube.com/watch?v=Y4HQkpnxVJw
+
 # cooking kit
 tools made for robot to cook easily
 
@@ -122,4 +127,13 @@ tools made for robot to cook easily
 tool for robot to clean easily
 
 
+# existing product 
+geio - game robot
+hanson sophia
+
+
+apple business model
+real person gaming is a good direction
+
+# turn your spare phone or ipad into moving control system
 
