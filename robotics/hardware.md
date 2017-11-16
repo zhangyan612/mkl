@@ -6,6 +6,12 @@
 https://roboticdreams.wordpress.com/2016/04/23/building-a-3-d-printed-robot-part-1/
 http://inmoov.fr/
 
+
+# 3D vision system
+https://3dscanexpert.com/structure-sensor-realsense-sr300-kinect-v2-3d-scanning/
+Razer Stargazer Depth-Sensing HD Webcam
+RealSense SR300 
+
 # L298N with rasperry pi
     http://www.piddlerintheroot.com/l298n-dual-h-bridge/
 
@@ -130,10 +136,47 @@ tool for robot to clean easily
 # existing product 
 geio - game robot
 hanson sophia
-
+Moley Robotics - robotic kitchen
+QBO ONE
 
 apple business model
 real person gaming is a good direction
 
 # turn your spare phone or ipad into moving control system
 
+
+# Handgesture Controlled Robot With Robotic Arm 
+http://www.instructables.com/id/Handgesture-controlled-robot-with-robotic-arm/
+
+# zhubajie
+http://shop.zbj.com/15626249/
+
+# round screen head
+https://www.androidauthority.com/lg-hub-robot-ces-2017-741700/
+http://www.robotshop.com/blog/en/cooking-and-domestic-robot-245
+
+http://www.businessinsider.com/pepper-robot-2015-6
+
+
+# hardware design platform
+https://www.gumstix.com/
+design your own board 
+
+Intel Joule 570x
+
+https://www.asus.com/us/Single-Board-Computer/Tinker-Board/
+Asus Sbc Tinker Board 
+LattePanda Windows 10 Single Board Computer
+
+http://www.forlinx.com
+http://www.lattepanda.com
+BeagleBone
+
+https://www.youtube.com/watch?v=N_m56irWKeI&t=63s
+how about legs but it does not move, only used for bend, and wheels for move
+
+operating system is open source
+build a framework that's priperitory with an ability market
+platform is open for anyone
+
+round head wiht screen face

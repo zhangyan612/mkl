@@ -5,15 +5,21 @@
     3. build api to control motors on computer through wifi (ROS or other)
     4. construct software foundation based on ros 
 
-2. enable basic skills like human have (vision, listening, speaking, movement, operate object)
+2. integrate hardware to have basic skills like human have (vision, listening, speaking, movement, operate object)
 
-3. construct framework for solving real work issue  - build ability (in level of difficulty)
+3. build robotic ability framework
+    1. sdk 
+    2. ability market
+    3. web mobile ui and platform integration
+    4. developer onboarding
+
+4. build key abilities for solving real work issue  - (in level of difficulty)
     organizing stuff (move object from one location to another)
     cleaning
     cooking
     washing dishes
     
-4. add machine learning capacity for advanced ability(reasoning, memory, learning)
+4. research on complex machine learning capacity for advanced ability(reasoning, memory, learning)
     opencog and other modules
 
 
