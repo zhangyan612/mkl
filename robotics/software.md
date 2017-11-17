@@ -60,3 +60,4 @@ https://software.intel.com/en-us/articles/project-avatar-a-gesture-controlled-fu
 # grabbing object
 https://berkeleyautomation.github.io/dex-net/
 Grasp Quality Convolutional Neural Networks (GQ-CNNs)
+
