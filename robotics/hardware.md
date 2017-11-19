@@ -193,3 +193,12 @@ https://www.udoo.org/
 
 Linear Actuator Electric Putter Motor
 推杆电机
+
+Motor list 
+HK15298B, Hitec HS805BB and MG996
+
+LewanSoul 32 Channel Digital Servo Controller
+
+
+# for making machine parts
+CNC mill
