@@ -225,3 +225,36 @@ make install
 make clean all
 make check
 sudo make install
+
+# install usb camera/microphone
+cheese
+
+sudo echo "load-module module-alsa-source device=hw:1,0" >> /etc/pulse/default.pa
+
+pulseaudio -v --log-target=stderr
+
+
+# recording voice and playback
+arecord filename.wav
+
+arecord -D hw:1,0 -f S16_LE filename.wav
+arecord -D hw:1,0 filename.wav
+
+# instal pause audio
+sudo apt-get install pavucontrol
+
+sudo apt-get --purge --reinstall install pulseaudio
+rm -r ~/.config/pulse
+killall pulseaudio; rm -r ~/.config/pulse/*
+sudo apt install --reinstall alsa-base alsa-utils pulseaudio linux-sound-base libasound2
+
+sudo gedit /etc/pulse/client.conf
+
+# /usr/share/alsa/init/00main
+# sudo gedit /usr/share/alsa/init/00main
+# '# real ALSA configuration database' section
+# CARDINFO{driver}=="USB-Audio", INCLUDE="usb", GOTO="init_end"
+
+delete the .config/pulse folder
+go reboot
+and get back to your desktop

@@ -385,43 +385,46 @@ cp ~/repos/mkl/environment_setup/eva.sh ~/catkin_ws/eva.sh
 
 # running
 
-# start roscore
+# 1. start roscore
 roscore
 # byobu new-session -d -n 'ros' 'roscore; $SHELL'
 
 # # Run the relex parse server.
 # cd ~/opencog/relex && ./opencog-server.sh
 
-# Run the relex parse server. work
+# 2. Run the relex parse server. work
 tmux new-window -n 'rlx' 'cd ~/opencog/relex && ./opencog-server.sh ; $SHELL'
 
-# Single Video (body) camera and face tracker. work
+# 3. Single Video (body) camera and face tracker. work
 roslaunch perception tracker-single-cam.launch
 # tmux new-window -n 'trk' 'cd ~/catkin_ws/src/perception/launch && roslaunch tracker-single-cam.launch; $SHELL'
 
-# Publish the geometry messages. This includes tf2 which holds
-# the face locations. Not working
+# 4. Publish the geometry messages. This includes tf2 which holds
+# the face locations. 
 # roslaunch perception geometry.launch
+# copy description.urdf to launch folder
+cd ~/catkin_ws/src/perception/launch
 roslaunch perception geometry.launch model:=description.urdf
 # tmux new-window -n 'geo' 'cd ~/catkin_ws/src/perception/launch && roslaunch geometry.launch gui:=false; $SHELL'
 
-### Start the blender GUI. work
+# 5. Start the blender GUI. work
 tmux new-window -n 'eva' 'cd ~/catkin_ws/src/blender_api && blender -y Sophia.blend -P autostart.py; $SHELL'
 
-# # Start the IRC chatbot bridge.
+# 6. Start the IRC chatbot bridge.
 tmux new-window -n 'irc' 'cd ~/opencog/opencog/build/opencog/nlp/irc && ./cogita -n ieva -f "Robot Eva" -t 17020; ; $SHELL'
 
-# Start the cogserver. 
-# start form build directory
+# 7. Start the cogserver. 
+# start form build directory btree have some issue
 cp ~/opencog/opencog/build/lib/opencog.conf ~/opencog/opencog/build/opencog/cogserver/server/my.conf
 cd ~/opencog/opencog/build/opencog/cogserver/server && cogserver -c  my.conf
 
 # start from scm file
 # cp ~/opencog/opencog/build/lib/opencog.conf ~/opencog/opencog/opencog/eva/scripts
 # It seems to take more than 5 seconds to load all scripts!?
+# error  no code for module (opencog nlp chatbot)
 tmux new-window -n 'cog' 'cd ~/opencog/opencog/opencog/eva/src && guile -l btree-eva.scm ; $SHELL'
 
-# Run the new face tracker. will work when fix cogserver
+# 8. Run the new face tracker. sending data to cogserver
 tmux new-window -n 'fac' 'cd ~/opencog/ros-behavior-scripting/sensors && ./main.py ; $SHELL'
 
 
