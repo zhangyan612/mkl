@@ -12,6 +12,10 @@ https://3dscanexpert.com/structure-sensor-realsense-sr300-kinect-v2-3d-scanning/
 Razer Stargazer Depth-Sensing HD Webcam
 RealSense SR300 
 
+ADAS sensors: radar, LIDAR, and cameras.
+https://www.quora.com/Why-do-self-driving-cars-use-LIDAR-instead-of-depth-cameras-like-Kinect
+
+
 # L298N with rasperry pi
     http://www.piddlerintheroot.com/l298n-dual-h-bridge/
 
@@ -72,6 +76,8 @@ https://hackaday.io/project/26001-veterobot
 
 most advanced one
 http://bebionic.com/
+tech detail
+http://bebionic.com/distributor/documents/Tech_Manual_Medium_Large_Hand.pdf
 
 # all open source hardware list 
 https://www.mouser.com/applications/open-source-hardware/
@@ -107,10 +113,10 @@ http://www.dexcraft.com/articles/carbon-fiber-composites/aluminium-vs-carbon-fib
 
 # industrial materials
 https://theconversation.com/scientists-create-bone-like-material-that-is-lighter-than-water-but-as-strong-as-steel-22729
-
+Air musule
 
 # Shopping List
-1. RIGHT ANGLE MALE HEADER 
+1. RIGHT ANGLE MALE HEADER   VERTICAL PIN HEADER 
 2. Ball Casters - for all direction wheels
 
 
