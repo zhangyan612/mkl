@@ -258,3 +258,7 @@ sudo gedit /etc/pulse/client.conf
 delete the .config/pulse folder
 go reboot
 and get back to your desktop
+
+
+# connecting arduino to python 
+https://github.com/wiseman/arduino-serial
