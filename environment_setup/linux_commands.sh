@@ -260,5 +260,9 @@ go reboot
 and get back to your desktop
 
 
+
+# arduino
+https://www.safaribooksonline.com/library/view/arduino-cookbook/9781449399368/ch04.html
+
 # connecting arduino to python 
 https://github.com/wiseman/arduino-serial
