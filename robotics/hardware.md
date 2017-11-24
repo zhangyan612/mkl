@@ -202,3 +202,32 @@ LewanSoul 32 Channel Digital Servo Controller
 
 # for making machine parts
 CNC mill
+
+# open hardware
+https://www.openhardware.io/
+
+# pcb design
+Altium PCB
+EasyEDA
+https://www.openhardware.io/explore 
+https://www.seeedstudio.com/
+https://www.adafruit.com/
+https://circuitmaker.com/Projects
+
+stack shield
+https://www.adafruit.com/product/85
+
+PWM and Servo driver shield
+https://www.adafruit.com/product/1411
+
+
+http://www.jdbpcb.com/###
+
+# industrial supply chain
+hardware design - testing - manufacturing
+industrial design - structure design - industry manufacturing
+
+Assembly of hardware IT device with physical device - Foxconn
+
+# team collabration
+idea metrics or github for ideas(bridgewater metrics)
