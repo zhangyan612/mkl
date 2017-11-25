@@ -118,8 +118,14 @@ Air musule
 # Shopping List
 1. RIGHT ANGLE MALE HEADER   VERTICAL PIN HEADER 
 2. Ball Casters - for all direction wheels
+3. GPIO Header for Raspberry Pi HAT - 2x20 Short
+https://www.adafruit.com/product/2243?gclid=EAIaIQobChMIirup7Jba1wIVl4qzCh2srQHeEAQYAyABEgLQEvD_BwE
 
+https://www.amazon.com/SunFounder-Raspberry-4000mAh-Expansion-Board-Plus/dp/B06Y2XBV8Q/ref=pd_sim_328_6?_encoding=UTF8&psc=1&refRID=QJSF5EQHARFY77BMBBA6
 
+  Assorted M3 M2.5 Nylon Screws Nut Standoffs Spacers for Arduino Raspberry Pi FPV RC Drone PC mods 
+
+https://www.amazon.com/eBoot-Pieces-Female-Standoff-Assortment/dp/B06XXV8RTR/ref=sr_1_2_sspa?ie=UTF8&qid=1511629478&sr=8-2-spons&keywords=Screws+Nut+Standoffs+Spacers&psc=1
 
 # Future plan for Robot Accessory
 # Climb stairs kit
