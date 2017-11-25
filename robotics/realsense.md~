@@ -1,0 +1,30 @@
+# documentation
+https://01.org/developerjourney/recipe/intel-realsense-robotic-development-kit
+
+## system upgrade
+sudo apt update
+sudo apt -y dist-upgrade
+
+## Install the linux-upboard kernel
+sudo add-apt-repository ppa:ubilinux/up
+sudo apt update
+sudo apt -y install linux-upboard
+sudo apt -y autoremove --purge 'linux-.*generic'
+sudo apt autoremove --purge
+### if on linux 14.04
+sudo apt-get autoremove --purge 'linux-.*generic'
+
+sudo reboot
+
+# Verify you are running the linux-upboard kernel:
+uname -r
+If the output indicates you are running a kernel with the string upboard in the name, you are ready to go!:
+robot@robot:~$ uname -r
+4.4.0.1-upboard
+
+# Provide kernel source access while installing the latest RealSense patches 
+wget -q -O - https://bit.ly/en_krnl_src | sudo /bin/bash
+
+# Install ROS Kinetic Kame framework 
+
+
