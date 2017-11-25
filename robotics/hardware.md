@@ -193,6 +193,9 @@ platform is open for anyone
 
 round head wiht screen face
 
+# pcb prototyping
+https://cirqoid.com/ 
+https://www.voltera.io/
 
 UDOO
 https://www.udoo.org/
