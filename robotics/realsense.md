@@ -38,14 +38,26 @@ rosdep update
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
+
 sudo reboot
 
+# if roscore is still running after close
+killall -9 roscore
+killall -9 rosmaster
 
 # Running the Intel RealSense R200 nodelet 
 roscore &
 roscd realsense_camera
 roslaunch realsense_camera r200_nodelet_default.launch &
 rosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0 0.0 map camera_link 100 &
+
+rosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0 0.0 map camera_depth_optical_frame 100
+
+# check point cloud
+rostopic echo /camera/depth/points
+
+# camera configuration
+rosrun rqt_reconfigure rqt_reconfigure
 
 # verify camera detected
 ls /dev/video*
@@ -55,6 +67,8 @@ lsmod | grep -q uvcvideo && echo "Kernel module found."
 # Running RViz 
 
 rosrun rviz rviz -d $(rospack find realsense_camera)/rviz/realsenseRvizConfiguration1.rviz
+# rosrun rviz rviz -d /rviz/realsenseRvizConfiguration1.rviz
+
 
 # newer sdk version
 # install realsense sdk
@@ -122,11 +136,9 @@ make && sudo make install
 
 # Video4Linux backend
 # Ensure no cameras are presently plugged into the system.
-Install udev rules
-
+# Install udev rules
 sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules && udevadm trigger
-
 ./scripts/patch-uvcvideo-16.04.simple.sh
 
 # Reload the uvcvideo driver
@@ -134,4 +146,28 @@ sudo modprobe uvcvideo
 
 # Check installation by examining the last 50 lines of the dmesg log:
 sudo dmesg | tail -n 50
+
+
+
+# installation for aiy project - not working under upboard
+git clone https://github.com/google/aiyprojects-raspbian.git
+cd aiyprojects-raspbian
+apt-get install python3-socks
+
+sudo apt-get install python3-pip
+sudo pip3 install RPi.GPIO
+
+scripts/install-deps.sh
+sudo scripts/install-services.sh
+
+chmod +x configure-driver.sh
+sudo scripts/configure-driver.sh
+sudo scripts/install-alsa-config.sh
+sudo reboot
+
+
+# modify
+gedit ~/.bashrc
+
+export ROS_IP=192.168.0.49 2601:249:8280:3213:d08e:1bb8:6e63:1724 2601:249:8280:3213:76da:38ff:fe2a:e3cf 
 
