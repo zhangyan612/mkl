@@ -118,7 +118,7 @@ Air musule
 # Shopping List
 1. RIGHT ANGLE MALE HEADER   VERTICAL PIN HEADER 
 2. Ball Casters - for all direction wheels
-
+3. USB to Type N Barrel 5V DC Power Cable
 
 
 # Future plan for Robot Accessory
@@ -231,3 +231,18 @@ Assembly of hardware IT device with physical device - Foxconn
 
 # team collabration
 idea metrics or github for ideas(bridgewater metrics)
+
+
+# assymbly parts
+
+raspberry pi gpio ribbon cable
+
+# power supply
+http://tinkersphere.com/power/379-breadboard-power-supply-module-33v-5v-arduino-raspberry-pi-compatible.html
+
+# motor
+
+# battery 
+li-po battery
+
+rechargble battery 

@@ -18,3 +18,11 @@ roslaunch turtlebot_teleop keyboard_teleop.launch
 rostopic list
 # find more info
 rostopic info /odom
+
+
+
+# turtlebot navigation
+# add mybot to source
+echo "source ~/mybot_ws/devel/setup.bash" >> ~/.bashrc
+
+roslaunch mybot_gazebo mybot_world.launch

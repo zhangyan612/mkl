@@ -61,3 +61,7 @@ https://software.intel.com/en-us/articles/project-avatar-a-gesture-controlled-fu
 https://berkeleyautomation.github.io/dex-net/
 Grasp Quality Convolutional Neural Networks (GQ-CNNs)
 
+# team building
+computer/hardware engineer
+industrial designer
+c++ developer
