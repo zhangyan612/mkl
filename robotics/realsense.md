@@ -38,15 +38,26 @@ rosdep update
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
+
 sudo reboot
 
+# if roscore is still running after close
+killall -9 roscore
+killall -9 rosmaster
 
 # Running the Intel RealSense R200 nodelet 
 roscore &
 roscd realsense_camera
 roslaunch realsense_camera r200_nodelet_default.launch &
-rosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0 0.0 \
-       map camera_link 100 &
+rosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0 0.0 map camera_link 100 &
+
+rosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0 0.0 map camera_depth_optical_frame 100
+
+# check point cloud
+rostopic echo /camera/depth/points
+
+# camera configuration
+rosrun rqt_reconfigure rqt_reconfigure
 
 # verify camera detected
 ls /dev/video*
@@ -56,7 +67,10 @@ lsmod | grep -q uvcvideo && echo "Kernel module found."
 # Running RViz 
 
 rosrun rviz rviz -d $(rospack find realsense_camera)/rviz/realsenseRvizConfiguration1.rviz
+# rosrun rviz rviz -d /rviz/realsenseRvizConfiguration1.rviz
 
+
+# newer sdk version
 # install realsense sdk
 
 # Add Intel server to the list of repositories :
@@ -71,7 +85,8 @@ sudo apt-get update
 # In order to run demos install:
 sudo apt-get install realsense-uvcvideo
 sudo apt-get install librealsense2-utils
-Reconnect the Intel RealSense depth camera and run: realsense-viewer
+# Reconnect the Intel RealSense depth camera and run: 
+realsense-viewer
 
 
 # Developers shall install additional packages:
@@ -85,4 +100,74 @@ to reload the kernel with modules provided by DKMS.
 
 # Verify that the kernel is updated :
 modinfo uvcvideo | grep "version:" should include realsense string
+
+# test to debug
+chmod 666 /dev/media0
+chmod 666 /dev/media1
+chmod 666 /dev/media2
+chmod 666 /dev/video0
+chmod 666 /dev/video1
+chmod 666 /dev/video2
+
+
+# older version of sdk for R200 camera
+git clone https://github.com/IntelRealSense/librealsense.git
+git checkout tags/v1.12.1
+cd librealsense
+
+# Ensure apt-get is up to date
+sudo apt-get update && sudo apt-get upgrade
+
+# Install libusb-1.0 and pkg-config via apt-get
+sudo apt-get install libusb-1.0-0-dev pkg-config
+
+# For 16.04 you can install glfw3 via 
+sudo apt-get install libglfw3-dev
+
+# install QtCreator
+sudo apt-get install qtcreator
+sudo scripts/install_qt.sh (we also need qmake from the full qt5 distribution)
+
+# build the librealsense project 
+mkdir build
+cd build
+cmake ..
+make && sudo make install
+
+# Video4Linux backend
+# Ensure no cameras are presently plugged into the system.
+# Install udev rules
+sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules && udevadm trigger
+./scripts/patch-uvcvideo-16.04.simple.sh
+
+# Reload the uvcvideo driver
+sudo modprobe uvcvideo
+
+# Check installation by examining the last 50 lines of the dmesg log:
+sudo dmesg | tail -n 50
+
+
+
+# installation for aiy project - not working under upboard
+git clone https://github.com/google/aiyprojects-raspbian.git
+cd aiyprojects-raspbian
+apt-get install python3-socks
+
+sudo apt-get install python3-pip
+sudo pip3 install RPi.GPIO
+
+scripts/install-deps.sh
+sudo scripts/install-services.sh
+
+chmod +x configure-driver.sh
+sudo scripts/configure-driver.sh
+sudo scripts/install-alsa-config.sh
+sudo reboot
+
+
+# modify
+gedit ~/.bashrc
+
+export ROS_IP=192.168.0.49 2601:249:8280:3213:d08e:1bb8:6e63:1724 2601:249:8280:3213:76da:38ff:fe2a:e3cf 
 
