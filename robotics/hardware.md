@@ -256,3 +256,9 @@ http://tinkersphere.com/power/379-breadboard-power-supply-module-33v-5v-arduino-
 li-po battery
 
 rechargble battery 
+
+# platform (6 degree freedom)
+https://www.turbosquid.com/3d-models/hexapod-platform-3d-model/956043
+
+# artificial skins
+https://www.livescience.com/1013-robots-soft-human-skin.html
