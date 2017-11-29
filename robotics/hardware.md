@@ -251,6 +251,8 @@ raspberry pi gpio ribbon cable
 http://tinkersphere.com/power/379-breadboard-power-supply-module-33v-5v-arduino-raspberry-pi-compatible.html
 
 # motor
+build a common layer of motor movement with simulation
+record motor movemnent feedback with goal
 
 # battery 
 li-po battery
@@ -260,5 +262,8 @@ rechargble battery
 # platform (6 degree freedom)
 https://www.turbosquid.com/3d-models/hexapod-platform-3d-model/956043
 
-# artificial skins
+# artificial skins/musule
 https://www.livescience.com/1013-robots-soft-human-skin.html
+https://www.youtube.com/watch?v=Ir69MXyOvFs
+http://www.pnas.org/content/early/2017/11/21/1713450114.abstract?tab=ds
+http://www.robotshop.com/media/files/pdf/air-muscle-information-sheet-am-02l.pdf

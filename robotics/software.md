@@ -69,3 +69,29 @@ computer/hardware engineer
 industrial designer
 c++ developer
 
+# names
+bionica 
+bionicog
+awaken
+
+https://spectrum.ieee.org/automaton/robotics/robotics-software/the-origin-story-of-ros-the-linux-of-robotics
+http://personalrobotics.stanford.edu/
+https://www.slideshare.net/KeenanWyrobek/personal-robotics-program-fund-fundraising-deck-from-2006?ref=https://spectrum.ieee.org/automaton/robotics/robotics-software/the-origin-story-of-ros-the-linux-of-robotics
+
+Motion planning 
+manipulation
+navigation
+mapping
+modeling
+control
+safety system
+speech/nlp
+perception
+vision
+reasoning
+machine learning
+
+Lidar
+camera
+microphone
+motors
