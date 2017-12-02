@@ -244,8 +244,10 @@ idea metrics or github for ideas(bridgewater metrics)
 
 
 # assymbly parts
-
 raspberry pi gpio ribbon cable
+
+T Slot Aluminum Extrusion
+
 
 # power supply
 http://tinkersphere.com/power/379-breadboard-power-supply-module-33v-5v-arduino-raspberry-pi-compatible.html
@@ -267,3 +269,26 @@ https://www.livescience.com/1013-robots-soft-human-skin.html
 https://www.youtube.com/watch?v=Ir69MXyOvFs
 http://www.pnas.org/content/early/2017/11/21/1713450114.abstract?tab=ds
 http://www.robotshop.com/media/files/pdf/air-muscle-information-sheet-am-02l.pdf
+
+pvc plastic 
+bionic hand 
+air control 
+
+
+
+
+linear Actuators 
+JAZZY AIR
+
+Merits  Dualer Power Wheelchair
+
+Heavy Duty Linear Bearing Slide Rails
+Aluminum Chassis Kit
+
+# good designs 
+https://www.turbosquid.com/3d-models/design-wheelchair-max/1030536
+https://grabcad.com/library/electric-wheelchair-1
+http://beetl.co/
+
+4 wheel
+https://www.safaribooksonline.com/library/view/make-an-arduino-controlled/9781449344368/ch04.html
