@@ -65,15 +65,17 @@ import Queue
 import camera_streamer
 import robot_controller
 import json
-import gopigo
+#import gopigo
 import subprocess
 import sys
 robot = None
 
 cameraStreamer = None
-scriptPath = os.path.dirname( __file__ )
+#scriptPath = os.path.dirname( __file__ )
+scriptPath = os.path.dirname(os.path.realpath(__file__))
+
 webPath = os.path.abspath( scriptPath + "/www" )
-print webPath
+print(webPath)
 robotConnectionResultQueue = Queue.Queue()
 isClosing = False
 
@@ -115,7 +117,7 @@ class ConnectionHandler( sockjs.tornado.SockJSConnection ):
                     
                 elif lineData[ 0 ] == "Shutdown":
                     cameraStreamer.stopStreaming()
-                    gopigo.stop()
+                    #gopigo.stop()
                     robot.disconnect()
                     sys.exit()
                 
@@ -221,7 +223,8 @@ if __name__ == "__main__":
     # Now start the web server
     logging.info( "Starting web server..." )
     http_server = tornado.httpserver.HTTPServer( application )
-    http_server.listen( 80 )
+    http_server.listen(8089)
+    logging.info( "Listening on 8089" )
     
     robotPeriodicCallback = tornado.ioloop.PeriodicCallback( 
         robotUpdate, 100, io_loop=tornado.ioloop.IOLoop.instance() )

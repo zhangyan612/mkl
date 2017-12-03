@@ -73,6 +73,9 @@ c++ developer
 bionica 
 bionicog
 awaken
+biomechanic
+biomecha
+biomeca robo
 
 https://spectrum.ieee.org/automaton/robotics/robotics-software/the-origin-story-of-ros-the-linux-of-robotics
 http://personalrobotics.stanford.edu/

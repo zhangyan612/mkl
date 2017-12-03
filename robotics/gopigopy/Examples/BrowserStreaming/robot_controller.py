@@ -47,7 +47,7 @@ import math
 import time
 import Queue
 import threading
-import gopigo
+#import gopigo
 #--------------------------------------------------------------------------------------------------- 
 debug=0
 class RobotController:
@@ -63,8 +63,9 @@ class RobotController:
     speed_r=200
     #-----------------------------------------------------------------------------------------------
     def __init__( self ):
-        gopigo.set_speed(200)
-        gopigo.stop()
+        print('initilize')
+        #gopigo.set_speed(200)
+        #gopigo.stop()
         #gopigo.fwd()
         
         self.lastServoSettingsSendTime = 0.0
@@ -104,20 +105,21 @@ class RobotController:
         #gopigo.set_left_speed(int(self.speed_l*joystickY))
         #gopigo.fwd()
         if joystickX > .5:
-			print "Left"
-			gopigo.left()
+            logging.info("Left")
+			#print("Left")
+			#gopigo.left()
         elif joystickX <-.5:
 			print "Right"
-			gopigo.right()
+			#gopigo.right()
         elif joystickY > .5:
 			print "Fwd"
-			gopigo.fwd()
+			#gopigo.fwd()
         elif joystickY < -.5:
 			print "Back"
-			gopigo.bwd()
+			#gopigo.bwd()
         else:
 			print "Stop"
-			gopigo.stop()
+			#gopigo.stop()
 		
     def setNeckJoystickPos( self, joystickX, joystickY ):
         #print "g"

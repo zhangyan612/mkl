@@ -273,11 +273,29 @@ http://www.robotshop.com/media/files/pdf/air-muscle-information-sheet-am-02l.pdf
 pvc plastic 
 bionic hand 
 air control 
+three-way stopcock air valve
+http://www.imagesco.com/articles/airmuscle/AirMuscleDescription05.html
+https://www.amazon.com/4H210-085-Pneumatic-Operated-Solenoid-Control/dp/B01E6W65TM/ref=sr_1_3?ie=UTF8&qid=1512273215&sr=8-3&keywords=4+way+pneumatic+valve
 
+plastic bag heat seal machine
+https://www.amazon.com/Impulse-sealer-plastic-machine-housing/dp/B01M6BV61T/ref=sr_1_8?ie=UTF8&qid=1512272113&sr=8-8&keywords=plastic+bag+sealers
 
+# air musule
+http://www.instructables.com/id/Soft-Robots-Making-Robot-Air-Muscles/
+http://www.instructables.com/id/How-to-make-air-muscles!/
+Festo Air Arm
+air valve
+ITMA_2015_03_VTUG
 
+Hole Punch Plier 6 Size Head revolves
+uxcell 10M 32.8Ft 6mm x 4mm Pneumatic Polyurethane PU Hose Tube Pipe Blue
 
-linear Actuators 
+# soft wheels
+http://www.rswarrior.com/forums/19-general-bike-talk/166818-tweel-could-tire-made-into-bike-tire.html
+idea: 5 sticks inside wheels, slide based on gravity
+airless tire design 
+
+# linear Actuators 
 JAZZY AIR
 
 Merits  Dualer Power Wheelchair
@@ -292,3 +310,9 @@ http://beetl.co/
 
 4 wheel
 https://www.safaribooksonline.com/library/view/make-an-arduino-controlled/9781449344368/ch04.html
+
+
+# rotating head
+https://www.adafruit.com/product/1967
+https://learn.adafruit.com/pixy-pet-robot-color-vision-follower-using-pixycam
+https://learn.adafruit.com/3d-printed-animatronic-robot-head/design
