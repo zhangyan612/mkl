@@ -74,6 +74,10 @@ https://www.openbionics.com/shop/brunel-hand
 Veterobot -- vehicle
 https://hackaday.io/project/26001-veterobot
 
+http://exiii.jp/
+http://exiii-hackberry.com/
+https://github.com/zhangyan612/HACKberry
+
 most advanced one
 http://bebionic.com/
 tech detail
