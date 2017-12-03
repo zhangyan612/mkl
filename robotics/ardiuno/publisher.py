@@ -3,7 +3,7 @@ import time
 SerialData = serial.Serial('/dev/ttyACM0',9600)
 
 while True:
-    SerialData.write('1,2,3')
+    SerialData.write('20,90,90,90,90,90,73')
     time.sleep(5)
 
 
