@@ -53,7 +53,10 @@ rosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0 0.0 map camera_link 100
 
 rosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0 0.0 map camera_depth_optical_frame 100
 
-# check point cloud
+# this will show black white point cloud
+roslaunch realsense_camera r200_nodelet_rgbd.launch
+
+# check point cloud 
 rostopic echo /camera/depth/points
 
 # camera configuration
