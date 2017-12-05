@@ -250,20 +250,33 @@ idea metrics or github for ideas(bridgewater metrics)
 # assymbly parts
 raspberry pi gpio ribbon cable
 
+# Steels
 T Slot Aluminum Extrusion
+EZTUBE 3-WAY BLACK CORNER STEEL CORE CONNECTOR
 
-
-# power supply
-http://tinkersphere.com/power/379-breadboard-power-supply-module-33v-5v-arduino-raspberry-pi-compatible.html
-
-# motor
-build a common layer of motor movement with simulation
-record motor movemnent feedback with goal
 
 # battery 
 li-po battery
 
 rechargble battery 
+
+# power regulator board
+http://tinkersphere.com/power/379-breadboard-power-supply-module-33v-5v-arduino-raspberry-pi-compatible.html
+charging and providing battery
+Module 12-24 V De Stockage de Contrôle De charge de La Batterie Au Lithium XH-M603
+
+LM2596 (3A) 
+XL4005 (5A)
+LTC2951 
+3A converter based on LM2596 is here 
+
+
+
+aluminum strip
+
+# motor
+build a common layer of motor movement with simulation
+record motor movemnent feedback with goal
 
 # platform (6 degree freedom)
 https://www.turbosquid.com/3d-models/hexapod-platform-3d-model/956043
