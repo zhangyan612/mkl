@@ -333,3 +333,7 @@ https://www.safaribooksonline.com/library/view/make-an-arduino-controlled/978144
 https://www.adafruit.com/product/1967
 https://learn.adafruit.com/pixy-pet-robot-color-vision-follower-using-pixycam
 https://learn.adafruit.com/3d-printed-animatronic-robot-head/design
+
+# wheel design that lift up
+http://bdml.stanford.edu/Main/MicroTugs
+http://bdml.stanford.edu/uploads/Main/MicroTugs/TugSchematic.pdf
