@@ -337,3 +337,11 @@ https://learn.adafruit.com/3d-printed-animatronic-robot-head/design
 # wheel design that lift up
 http://bdml.stanford.edu/Main/MicroTugs
 http://bdml.stanford.edu/uploads/Main/MicroTugs/TugSchematic.pdf
+
+# remote charging 
+https://www.adafruit.com/product/1901
+https://www.adafruit.com/product/1407?gclid=CjwKCAiAjanRBRByEiwAKGyjZZKEYkkwI431g972UaajLNIabGdsO4uv-H378ojvhCa7n4nf97m28BoC-nsQAvD_BwE
+
+# GSM GPRS GPS Board for Arduino Raspberry
+https://www.ebay.com/i/161769485780?chn=ps
+https://www.amazon.com/WHDTS-Antenna-Support-Message-Microcontroller/dp/B072K5JLZD

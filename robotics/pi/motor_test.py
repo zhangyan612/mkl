@@ -1,8 +1,8 @@
 from gpiozero import PWMOutputDevice
 from time import sleep
 
-left_motor = PWMOutputDevice(4)
-right_motor = PWMOutputDevice(17)
+left_motor = PWMOutputDevice(17)
+right_motor = PWMOutputDevice(4)
 
 #   sleep(1)
 #   pwm.value = 0.5
