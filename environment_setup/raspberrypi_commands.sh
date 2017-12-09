@@ -18,3 +18,7 @@ sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer
 
 sudo raspi-config 
 # Scroll down to VNC and set it to Enabled.
+
+vncserver -geometry 800x600
+
+# You could create a ~/.vnc/config file and populate it with the following to control the geometry of all desktops created by a particular user:

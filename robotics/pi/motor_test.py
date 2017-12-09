@@ -11,16 +11,16 @@ right_motor = PWMOutputDevice(17)
 #   sleep(1)
 
 def fwd():
-  left_motor = PWMOutputDevice(4)
-  right_motor = PWMOutputDevice(17)
+  left_motor.on()
+  right_motor.on()
 
 def turn_left():
-  left_motor = PWMOutputDevice(4)
+  left_motor.on()
   right_motor.off()
 
 def turn_right():
   left_motor.off()
-  right_motor = PWMOutputDevice(17)
+  right_motor.on()
 
 def stop():
   left_motor.off()
