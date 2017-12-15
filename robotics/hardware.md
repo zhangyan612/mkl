@@ -351,3 +351,10 @@ https://www.amazon.com/WHDTS-Antenna-Support-Message-Microcontroller/dp/B072K5JL
 榻榻米升降桌 自动手动电动气动升降机
 气动升降机
 tv movable stand
+
+# manufacturing
+金属模型车生产厂
+CNC Milling Machine
+
+Genecide
+3D Bioprinting
