@@ -259,6 +259,13 @@ EZTUBE 3-WAY BLACK CORNER STEEL CORE CONNECTOR
 li-po battery
 
 rechargble battery 
+https://www.amazon.com/gp/product/B003S1RQ2S/ref=ox_sc_act_title_1?smid=ATVPDKIKX0DER&psc=1
+
+Booster Pac RECHARGING CORD (CAR) ESA1
+https://www.amazon.com/dp/B01MRPKPPG/ref=sspa_dk_detail_0?pd_rd_i=B01MRPKPPG&pd_rd_wg=3XwAv&pd_rd_r=W1DT8G20VG95XYDEJAKR&pd_rd_w=lu2aI&th=1
+
+Comparison
+http://batteryuniversity.com/learn/archive/whats_the_best_battery
 
 # power regulator board
 http://tinkersphere.com/power/379-breadboard-power-supply-module-33v-5v-arduino-raspberry-pi-compatible.html
@@ -270,9 +277,10 @@ XL4005 (5A)
 LTC2951 
 3A converter based on LM2596 is here 
 
-
-
 aluminum strip
+
+# charging 
+Home Charging Dock Station
 
 # motor
 build a common layer of motor movement with simulation
