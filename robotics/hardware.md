@@ -234,7 +234,6 @@ https://www.adafruit.com/product/85
 PWM and Servo driver shield
 https://www.adafruit.com/product/1411
 
-
 http://www.jdbpcb.com/###
 
 # industrial supply chain
@@ -285,6 +284,10 @@ Home Charging Dock Station
 # motor
 build a common layer of motor movement with simulation
 record motor movemnent feedback with goal
+
+tiny motor
+hexTronik 24gram Brushless Outrunner 3000kv
+
 
 # platform (6 degree freedom)
 https://www.turbosquid.com/3d-models/hexapod-platform-3d-model/956043
