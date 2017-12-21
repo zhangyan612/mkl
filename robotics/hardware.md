@@ -356,6 +356,8 @@ https://www.adafruit.com/product/1407?gclid=CjwKCAiAjanRBRByEiwAKGyjZZKEYkkwI431
 # GSM GPRS GPS Board for Arduino Raspberry
 https://www.ebay.com/i/161769485780?chn=ps
 https://www.amazon.com/WHDTS-Antenna-Support-Message-Microcontroller/dp/B072K5JLZD
+Phone + GPS
+https://www.adafruit.com/product/2542
 
 # up down 
 全丝杆传动升降杆
@@ -369,3 +371,32 @@ CNC Milling Machine
 
 Genecide
 3D Bioprinting
+
+# frame 
+3 wheel car 
+https://www.youtube.com/watch?v=3ll0KR3qAiQ
+
+tesla material
+http://www.visualcapitalist.com/extraordinary-raw-materials-in-a-tesla-model-s/
+
+https://www.turbosquid.com/3d-models/blender-wheels-3d-model/1063591
+https://www.cycleboard.com/
+https://www.cycleboard.com/3d-tour/
+
+# radar
+hls_lfcd_lds
+https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver
+
+# solor panel
+https://www.adafruit.com/product/1525
+https://www.adafruit.com/product/390
+# maybe add a touch screen
+
+
+# prototype architecture
+connected device: mic, speaker, motors(2 dc many stepper), camera, radar, touch screen, gps cellular, battery (solor panel)
+All supported sensors: http://wiki.ros.org/Sensors    ( Ultrasonic, Force/Torque/Touch Sensors)
+
+raspberry pi3+voice hat (mic speaker, dc motor)
+
+up board (possible connect to motor board, + screen + camera + radar) + arduino + cellure
